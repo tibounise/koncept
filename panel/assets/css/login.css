@@ -64,3 +64,9 @@ button {
 button:hover {
 	color: #cb1c68;
 }
+
+h1 {
+	color: #fff;
+	font-weight: normal;
+	font-size: 20px;
+}

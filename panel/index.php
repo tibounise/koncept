@@ -1,9 +1,11 @@
 <?php
 
-	require_once('class/konceptdb.class.php');
-	require_once('class/localization.class.php');
-	require_once('class/login.class.php');
+session_start();
 
-	require_once('../configuration.php');
+if (!isset($_SESSION['username'])) {
+	header('Location: login.php');
+}
+
+header('Location: homepage.php');
 
 ?>

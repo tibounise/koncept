@@ -1,15 +1,17 @@
 {
-	"language":"fr",
-	"matchspecs":1,
-	"locales":
-	{
-		"Username":"Nom d'utilisateur",
-		"Password":"Mot de passe",
-		"PageNotFound":"Page non trouvée",
-		"WelcomeToKoncept":"Bienvenue sur koncept",
-		"NeedHelp":"Vous avez besoin d'aide ? Consultez le wiki de koncept en cliquant ici, laissez nous une issue à cette adresse, ou bien envoyez-nous un mail à help@koncept.org",
-		"Connected":"Vous êtes connecté",
-		"RedirectionInProgress":"Redirection en cours",
-		"WrongID":"Identifiants incorrects"
+    "language":"fr",
+    "matchspecs":1,
+    "locales":
+    {
+	"Username":"Nom d'utilisateur",
+	"Password":"Mot de passe",
+	"PageNotFound":"Page non trouvée",
+	"WelcomeToKoncept":"Bienvenue sur koncept",
+	"NeedHelp":"Vous avez besoin d'aide ? Consultez le wiki de koncept en cliquant ici, laissez nous une issue à cette adresse, ou bien envoyez-nous un mail à help@koncept.org",
+	"Connected":"Vous êtes connecté",
+	"RedirectionInProgress":"Redirection en cours",
+	"WrongID":"Identifiants incorrects",
+	"WelcomeAboard":"Bienvenue à bord",
+	"Backup":"Sauvegarde"
 	}
 }
