@@ -1,16 +1,8 @@
-<?php
+<?php 
 
-require_once('init.php');
+include 'lib/kompakt/Kompakt.php';
 
-$interface = new InterfaceBuilder();
-$interface->setTitle('koncept:backup');
-
-$interface->setContent('<h1><Localized//Backup></h1><hr>');
-
-$form = new FormBuilder();
-
-$interface->appendContent('');
-
-$interface->printLocalized($localization);
+include 'app/controllers/backup.controller.php';
+include 'app/views/backup.view.php';
 
 ?>
