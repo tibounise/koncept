@@ -45,7 +45,7 @@ class Kompakt {
 	}
 
 	public function getToken() {
-		return $_SESSION['token'];
+		return (!empty($_SESSION['token'])) ? $_SESSION['token'] : false;
 	}
 
 	public static function escape($input) {
