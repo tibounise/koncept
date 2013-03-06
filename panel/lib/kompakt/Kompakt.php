@@ -1,8 +1,5 @@
 <?php
 
-/*~-- Define our version of Kompakt --~*/
-define('KOMPAKT-APP', 1.0);
-
 /*~-- Define the essentials constants of Kompakt --~*/
 define('USER_HANDLING',1);
 define('CONFIG',2);
