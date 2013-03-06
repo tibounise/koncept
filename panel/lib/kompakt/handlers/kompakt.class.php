@@ -47,14 +47,6 @@ class Kompakt {
 	public function getToken() {
 		return (!empty($_SESSION['token'])) ? $_SESSION['token'] : false;
 	}
-
-	public static function escape($input) {
-		echo htmlspecialchars($input,ENT_HTML5 | ENT_NOQUOTES,'UTF-8');
-	}
-
-	public static function raw($input) {
-		echo $input;
-	}
 }
 
 ?>
