@@ -7,7 +7,7 @@ class Fetcher extends Elementy {
 	 * Name of the element
 	 * 
 	 * @var string $name Name of the element
-	 * @access private
+	 * @access public
 	 */
 	public $name;
 
@@ -15,7 +15,7 @@ class Fetcher extends Elementy {
 	 * Content of the element
 	 * 
 	 * @var string $content Content of the element
-	 * @access private
+	 * @access public
 	 */
 	public $content;
 
@@ -23,7 +23,7 @@ class Fetcher extends Elementy {
 	 * Metadata of the element
 	 * 
 	 * @var array $metadata Metadata of the element
-	 * @access private
+	 * @access public
 	 */
 	public $metadata;
 
@@ -31,7 +31,7 @@ class Fetcher extends Elementy {
 	 * Path to the element
 	 * 
 	 * @var string $path Path to the element
-	 * @access private
+	 * @access public
 	 */
 	public $path;
 
