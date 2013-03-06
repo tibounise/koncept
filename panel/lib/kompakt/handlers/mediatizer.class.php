@@ -12,7 +12,7 @@ class Mediatizer {
 		}
 		$this->path = $path;
 		if (!is_dir($path)) {
-			throw new Exception('Folder not found');
+			throw new \Exception('Folder not found');
 		}
 		$this->folderHandler = opendir($path);
 		if (!$this->folderHandler) {

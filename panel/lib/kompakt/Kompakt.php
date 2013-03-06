@@ -19,7 +19,6 @@ require 'handlers/user.class.php';
 require 'handlers/elementy.class.php';
 require 'handlers/fetcher.class.php';
 require 'handlers/error.class.php';
-require 'handlers/exception.class.php';
 require 'handlers/mediatizer.class.php';
 
 /*~-- Helpers --~*/

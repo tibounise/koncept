@@ -78,7 +78,7 @@ class Fukon {
 		if (isset($this->keysDB[$keyname]))
 			return $this->keysDB[$keyname];
 		else
-			throw new Exception('Key not found - '.$keyname,404);
+			throw new \Exception('Key not found - '.$keyname,404);
 	}
 
 	/**
