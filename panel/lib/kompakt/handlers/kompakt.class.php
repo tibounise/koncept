@@ -25,7 +25,7 @@ class Kompakt {
 			$this->Fetcher = new Kompakt\Handlers\Fetcher;
 		}
 		if ($params & 8) { // LOG_PROTECTION parameter
-			$this->User->logProtection();
+			Kompakt\Handlers\User::logProtection();
 		}
 		if ($params & 16) { // ERROR parameter
 			$this->Error =  new Kompakt\Handlers\Error;
@@ -42,10 +42,6 @@ class Kompakt {
 	public function configureLocales($localesPath) {
 		$localesJSON = file_get_contents($localesPath);
 		$this->Locales->pushJSON($localesJSON);
-	}
-
-	public function getToken() {
-		return (!empty($_SESSION['token'])) ? $_SESSION['token'] : false;
 	}
 }
 

@@ -12,7 +12,7 @@
 	
 	<p><strong><?= $app->Locales->getKey('folderPath'); ?> : </strong>/<?= $_GET['path'] ?></p>
 	
-	<a href="processor.php?action=rmfolder&path=<?= $_GET['path']; ?>&token=<?= $app->User->getToken(); ?>"><button class="btn"><?= $app->Locales->getKey('yes'); ?></button></a>
+	<a href="processor.php?action=rmfolder&path=<?= $_GET['path']; ?>&token=<?= Kompakt\Handlers\User::getToken(); ?>"><button class="btn"><?= $app->Locales->getKey('yes'); ?></button></a>
 	<a href="media.php?action=list&path=<?= $path; ?>"><button class="btn"><?= $app->Locales->getKey('no'); ?></button></a>
 </div>
 <?php

@@ -9,10 +9,6 @@ class User {
 		$_SESSION['token'] = uniqid();
 	}
 
-	public static function getToken() {
-		return $_SESSION['token'];
-	}
-
 	public static function checkToken($token) {
 		return $_SESSION['token'] == $token;
 	}
@@ -37,6 +33,10 @@ class User {
 		} else {
 			return false;
 		}
+	}
+
+	public static function getToken() {
+		return (!empty($_SESSION['token'])) ? $_SESSION['token'] : false;
 	}
 }
 

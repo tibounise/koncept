@@ -13,7 +13,7 @@
 <h1><?= $app->Locales->getKey('updateElement'); ?></h1>
 <hr />
 
-<form action="processor.php?action=editelement&id=<?= $_GET['id']; ?>&token=<?= $app->User->getToken(); ?>" class="standard-form" method="POST">
+<form action="processor.php?action=editelement&id=<?= $_GET['id']; ?>&token=<?= Kompakt\Handlers\User::getToken(); ?>" class="standard-form" method="POST">
 	<div class="input-control">
 		<p class="input-label"><?= $app->Locales->getKey('elementName'); ?> :</p>
 		<div class="input-field">
