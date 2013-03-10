@@ -1,41 +1,41 @@
 <?php 
 
-include 'lib/kompakt/Kompakt.php';
+require 'lib/kompakt/Kompakt.php';
 
 switch ($_GET['action']) {
 	case 'addelement':
-		include 'app/controllers/addelement.processor.controller.php';
-		include 'app/views/addelement.processor.view.php';
+		require 'app/controllers/addelement.processor.controller.php';
+		require 'app/views/addelement.processor.view.php';
 		break;
 
 	case 'rmelement':
-		include 'app/controllers/rmelement.processor.controller.php';
-		include 'app/views/rmelement.processor.view.php';
+		require 'app/controllers/rmelement.processor.controller.php';
+		require 'app/views/rmelement.processor.view.php';
 		break;
 	
 	case 'editelement':
-		include 'app/controllers/editelement.processor.controller.php';
-		include 'app/views/editelement.processor.view.php';
+		require 'app/controllers/editelement.processor.controller.php';
+		require 'app/views/editelement.processor.view.php';
 		break;
 
 	case 'uploadmedia':
-		include 'app/controllers/uploadmedia.processor.controller.php';
-		include 'app/views/uploadmedia.processor.view.php';
+		require 'app/controllers/uploadmedia.processor.controller.php';
+		require 'app/views/uploadmedia.processor.view.php';
 		break;
 
 	case 'addfolder':
-		include 'app/controllers/addfolder.processor.controller.php';
-		include 'app/views/addfolder.processor.view.php';
+		require 'app/controllers/addfolder.processor.controller.php';
+		require 'app/views/addfolder.processor.view.php';
 		break;
 
 	case 'rmfolder':
-		include 'app/controllers/rmfolder.processor.controller.php';
-		include 'app/views/rmfolder.processor.view.php';
+		require 'app/controllers/rmfolder.processor.controller.php';
+		require 'app/views/rmfolder.processor.view.php';
 		break;
 
 	case 'rmfile':
-		include 'app/controllers/rmfile.processor.controller.php';
-		include 'app/views/rmfile.processor.view.php';
+		require 'app/controllers/rmfile.processor.controller.php';
+		require 'app/views/rmfile.processor.view.php';
 		break;
 
 	default:

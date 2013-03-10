@@ -1,8 +1,8 @@
 <?php
 
-include 'lib/kompakt/Kompakt.php';
+require 'lib/kompakt/Kompakt.php';
 
-include 'app/controllers/login.controller.php';
-include 'app/views/login.view.php';
+require 'app/controllers/login.controller.php';
+require 'app/views/login.view.php';
 
 ?>
