@@ -45,17 +45,26 @@ class Fetcher extends Elementy {
 
 	/**
 	 * Date of the last modification of the element
+	 * 
 	 * @var int $lastedit Latest modification of the element
 	 * @access public
 	 */
 	public $lastedit;
 
+	/**
+	 * Abilities of the element
+	 * 
+	 * @var array $abilities Abilities of the element
+	 * @access public
+	 */
+	public $abilities;
+
 	public function hasAbility($ability) {
-		if (is_string($ability) && in_array($ability,$this->metadata['abilities'])) {
+		if (is_string($ability) && in_array($ability,$this->abilities)) {
 			return true;
 		} elseif (is_array($ability)) {
 			foreach ($arbility as $item) {
-				if (!in_array($item,$this->metadata['abilities'])) {
+				if (!in_array($item,$this->abilities)) {
 					return false;
 				}
 			}
@@ -88,6 +97,9 @@ class Fetcher extends Elementy {
 				$this->name = $element['name'];
 				$this->content = $element['content'];
 				$this->metadata = $element['metadata'];
+				$this->abilities = $element['abilities'];
+				$this->pubdate = $element['pubdate'];
+				$this->lastedit = $element['lastedit'];
 				return true;
 			}
 			else {
@@ -108,6 +120,9 @@ class Fetcher extends Elementy {
 		$element['name'] = $this->name;
 		$element['content'] = $this->content;
 		$element['metadata'] = $this->metadata;
+		$element['abilities'] = $this->abilities;
+		$element['pubdate'] = $this->pubdate;
+		$element['lastedit'] = $this->lastedit;
 		return file_put_contents($this->path.'element-'.$id.'.json',json_encode($element),LOCK_EX);
 	}
 

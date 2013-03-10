@@ -7,8 +7,8 @@ $app->configureLocales('locales/'.$app->Config->getKey('language').'.json');
 
 $app->HtmlVars->setKey('title','element');
 
-$metadataJSON = Kompakt\Helpers\Beautifier::JSON(json_encode(array('pubdate' => time(),
-																   'editdate' => time(),
-																   'abilities' => array(null))));
+$metadataJSON = Kompakt\Helpers\Beautifier::JSON(json_encode(array(null)));
+
+$timestamp = time();
 
 ?>

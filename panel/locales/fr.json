@@ -19,6 +19,7 @@
 	"HTMLformat":"Format HTML",
 	"UNKNOWNformat":"Format inconnu",
 	"MARKDOWNformat":"Format Markdown",
+	"TIMESTAMPformat":"Format timestamp",
 	"confirmationRemoveArticle":"Êtes vous sûr de vouloir suppimer cet élément ?",
 	"yes":"Oui",
 	"no":"Non",
@@ -59,5 +60,6 @@
 	"fileDoesntExists":"Le fichier n'existe pas",
 	"fileSuccessfullyDeleted":"Le fichier a été supprimé avec succès",
 	"dateFormat":"d/m/Y",
-	"Backup":"Sauvegarde"
+	"Backup":"Sauvegarde",
+	"abilities":"Aptitudes"
 }

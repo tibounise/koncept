@@ -37,15 +37,14 @@
         <?php
             foreach ($index['files'] as $id => $file):
                 $app->Fetcher->getElement($id);
-                $metadata = $app->Fetcher->metadata;
         ?>
         <tr>
             <td><a href="element.php?action=remove&id=<?= $id; ?>" class="iconlink"><i class="icon-trash"></i></a></td>
             <td><a href="element.php?action=edit&id=<?= $id; ?>" class="iconlink"><i class="icon-pencil"></i></a></td>
             <td><?= htmlspecialchars(stripslashes($app->Fetcher->name)); ?></td>
             <td><?= $id; ?></td>
-            <td><?= date($app->Locales->getKey('dateFormat'),$metadata['pubdate']); ?></td>
-            <td><?= date($app->Locales->getKey('dateFormat'),$metadata['editdate']); ?></td>
+            <td><?= date($app->Locales->getKey('dateFormat'),$app->Fetcher->pubdate); ?></td>
+            <td><?= date($app->Locales->getKey('dateFormat'),$app->Fetcher->lastedit); ?></td>
         </tr>
         <?php
             endforeach;

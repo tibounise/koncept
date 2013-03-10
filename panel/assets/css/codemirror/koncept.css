@@ -1,0 +1,40 @@
+.cm-s-koncept.CodeMirror {
+  font-family: monospace;
+  height: 300px;
+  color: #383838;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  box-shadow: 0px 1px 0px 0px #d6d6d6; 
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.cm-s-koncept div.CodeMirror-selected {background: #d6d6d7 !important;}
+.cm-s-koncept .CodeMirror-gutters {background: #272822; border-right: 0px;}
+.cm-s-koncept .CodeMirror-linenumber {color: #d0d0d0;}
+.cm-s-koncept .CodeMirror-cursor {border-left: 1px solid #383938 !important;}
+
+.cm-s-koncept span.cm-comment {color: #75715e;}
+.cm-s-koncept span.cm-atom {color: #ae81ff;}
+.cm-s-koncept span.cm-number {color: #ae81ff;}
+
+.cm-s-koncept span.cm-property, .cm-s-monokai span.cm-attribute {color: #a6e22e;}
+.cm-s-koncept span.cm-keyword {color: #f92672;}
+.cm-s-koncept span.cm-string {color: #2a929d;}
+
+.cm-s-koncept span.cm-variable {color: #a6e22e;}
+.cm-s-koncept span.cm-variable-2 {color: #9effff;}
+.cm-s-koncept span.cm-def {color: #fd971f;}
+.cm-s-koncept span.cm-error {background: #f92672; color: #f8f8f0;}
+.cm-s-koncept span.cm-bracket {color: #f8f8f2;}
+.cm-s-koncept span.cm-tag {color: #f92672;}
+.cm-s-koncept span.cm-link {color: #ae81ff;}
+
+.cm-s-koncept .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}

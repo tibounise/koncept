@@ -17,6 +17,8 @@ $newid = $app->Fetcher->getNewId();
 $app->Fetcher->name = $_POST['elementName'];
 $app->Fetcher->content = $_POST['elementContent'];
 $app->Fetcher->metadata = json_decode(stripslashes($_POST['elementMetadata']),true);
+$app->Fetcher->lastedit = $_POST['elementLastedit'];
+$app->Fetcher->pubdate = $_POST['elementPubdate'];
 $app->Fetcher->saveElement($newid);
 
 // Update the index
