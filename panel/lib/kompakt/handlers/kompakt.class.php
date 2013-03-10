@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @package Kompakt
+ */
 class Kompakt {
 	public $User;
 	public $Config;

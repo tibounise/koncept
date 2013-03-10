@@ -2,6 +2,9 @@
 
 namespace Kompakt\Handlers;
 
+/**
+ * @package Kompakt\Handlers
+ */
 class Mediatizer {
 	protected $path;
 	protected $folderHandler;

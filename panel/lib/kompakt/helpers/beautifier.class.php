@@ -2,7 +2,17 @@
 
 namespace Kompakt\Helpers;
 
+/**
+ * @package Kompakt\Helpers
+ */
 class Beautifier {
+	/**
+	 * Beautify JSON to display it in textareas
+	 * 
+	 * @param string $json JSON to beautify
+	 * @return string Beautified JSON
+	 * @access public
+	 */
 	public static function JSON($json) {
 		if (version_compare(PHP_VERSION, '5.4.0') >= 0) {
 			return json_encode(json_decode($json),JSON_PRETTY_PRINT);

@@ -2,6 +2,9 @@
 
 namespace Kompakt\Handlers;
 
+/**
+ * @package Kompakt\Handlers
+ */
 class Fetcher extends Elementy {
 	/**
 	 * Name of the element
