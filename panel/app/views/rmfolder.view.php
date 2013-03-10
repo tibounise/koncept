@@ -1,5 +1,5 @@
 <?php
-    include 'assets/php/header.view.php';
+    require 'assets/php/header.view.php';
 ?>
 
 <?php
@@ -28,5 +28,5 @@
 ?>
 
 <?php
-    include 'assets/php/footer.view.php';
+    require 'assets/php/footer.view.php';
 ?>
