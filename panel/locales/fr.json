@@ -63,5 +63,6 @@
 	"Backup":"Sauvegarde",
 	"abilities":"Aptitudes",
 	"separateW/Commas":"Séparer par des virgules",
-	"noElements":"Aucun élément est actuellement enregistré."
+	"noElements":"Aucun élément est actuellement enregistré.",
+	"fileUploaded":"Le fichier a été mis en ligne"
 }

@@ -29,9 +29,7 @@ if (!isset($_FILES['mediaFile'])) {
 } elseif (in_array($_FILES['mediaFile']['name'],$files)) {
 	$app->Error->registerMessage($app->Locales->getKey('fileWithSameName'));
 } else {
-	if (move_uploaded_file($_FILES['mediaFile']['tmp_name'],'../media/'.$_FILES['mediaFile']['name'])) {
-		echo 'Cool.';
-	} else {
+	if (!move_uploaded_file($_FILES['mediaFile']['tmp_name'],'../media/'.$_FILES['mediaFile']['name'])) {
 		$app->Error->registerMessage($app->Locales->getKey('errorWhileUpload'));
 	}
 }
