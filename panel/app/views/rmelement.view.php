@@ -10,7 +10,7 @@
 	
 	<hr />
 	
-	<p><strong><?= $app->Locales->getKey('elementName'); ?> : </strong><?= $app->Fetcher->getName(); ?></p>
+	<p><strong><?= $app->Locales->getKey('elementName'); ?> : </strong><?= $app->Fetcher->name; ?></p>
 	<p><strong><?= $app->Locales->getKey('elementId'); ?> : </strong><?= $_GET['id']; ?></p>
 	
 	<a href="processor.php?action=rmelement&id=<?= $_GET['id']; ?>&token=<?= Kompakt\Handlers\User::getToken(); ?>"><button class="btn"><?= $app->Locales->getKey('yes'); ?></button></a>

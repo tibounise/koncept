@@ -36,70 +36,19 @@ class Fetcher extends Elementy {
 	public $path;
 
 	/**
-	 * Gets the name of the element
+	 * Initial publication date of the element
 	 * 
-	 * @return string Name of the element
+	 * @var int $pubdate Initial publication date of the element
 	 * @access public
-	 * @deprecated
 	 */
-	public function getName() {
-		return $this->name;
-	}
+	public $pubdate;
 
 	/**
-	 * Gets the content of the element
-	 * 
-	 * @return string Content of the element
+	 * Date of the last modification of the element
+	 * @var int $lastedit Latest modification of the element
 	 * @access public
-	 * @deprecated
 	 */
-	public function getContent() {
-		return $this->content;
-	}
-
-	/**
-	 * Gets the metadata of the element
-	 * 
-	 * @return string Metadata of the element
-	 * @access public
-	 * @deprecated
-	 */
-	public function getMetadata() {
-		return $this->metadata;
-	}
-
-	/**
-	 * Sets the name of the element
-	 * 
-	 * @param string $name Name of the element
-	 * @access public
-	 * @deprecated
-	 */
-	public function setName($name) {
-		$this->name = $name;
-	}
-
-	/**
-	 * Sets the content of the element
-	 * 
-	 * @param string $content Content of the element
-	 * @access public
-	 * @deprecated
-	 */
-	public function setContent($content) {
-		$this->content = $content;
-	}
-
-	/**
-	 * Sets the metadata of the element
-	 * 
-	 * @param array $metadata Metadata of the element
-	 * @access public
-	 * @deprecated
-	 */
-	public function setMetadata($metadata) {
-		$this->metadata = $metadata;
-	}
+	public $lastedit;
 
 	public function hasAbility($ability) {
 		if (is_string($ability) && in_array($ability,$this->metadata['abilities'])) {

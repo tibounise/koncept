@@ -16,9 +16,9 @@ if (empty($_POST['elementName']) || empty($_POST['elementContent']) || empty($_P
 } elseif (!$app->Fetcher->getElement($_GET['id'])) {
 	$app->Error->registerMessage($app->Locales->getKey('idNotFound'));
 } else {
-	$app->Fetcher->setName($_POST['elementName']);
-	$app->Fetcher->setContent($_POST['elementContent']);
-	$app->Fetcher->setMetadata(json_decode(stripslashes($_POST['elementMetadata']),true));
+	$app->Fetcher->name = $_POST['elementName'];
+	$app->Fetcher->content = $_POST['elementContent'];
+	$app->Fetcher->metadata = json_decode(stripslashes($_POST['elementMetadata']),true);
 	$app->Fetcher->saveElement($_GET['id']);
 }
 

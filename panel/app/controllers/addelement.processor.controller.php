@@ -14,9 +14,9 @@ $app->HtmlVars->setKey('title','element');
 $newid = $app->Fetcher->getNewId();
 
 // Save the element
-$app->Fetcher->setName($_POST['elementName']);
-$app->Fetcher->setContent($_POST['elementContent']);
-$app->Fetcher->setMetadata(json_decode(stripslashes($_POST['elementMetadata']),true));
+$app->Fetcher->name = $_POST['elementName'];
+$app->Fetcher->content = $_POST['elementContent'];
+$app->Fetcher->metadata = json_decode(stripslashes($_POST['elementMetadata']),true);
 $app->Fetcher->saveElement($newid);
 
 // Update the index
