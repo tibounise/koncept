@@ -6,7 +6,7 @@
 
 <hr />
 
-<form action="processor.php?action=addfolder&token=<?= $app->User->getToken(); ?>&path=<?= $path; ?>" method="post" class="standard-form">
+<form action="processor.php?action=addfolder&token=<?= \Kompakt\Handlers\User::getToken(); ?>&path=<?= $path; ?>" method="post" class="standard-form">
 	<div class="input-control">
 		<p class="input-label"><?= $app->Locales->getKey('folderName'); ?> :</p>
 		<div class="input-field">

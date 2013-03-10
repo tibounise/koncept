@@ -38,8 +38,8 @@
             foreach ($folders as $folder):
         ?>
         <tr>
-        	<td><i class="icon-folder-open iconlink"></i></td>
-            <td><a href="media.php?action=rmfolder&path=<?= $path.$folder; ?>" class="iconlink"><i class="icon-trash"></i></a></td>
+            <td class="center"><a href="media.php?action=rmfolder&path=<?= $path.$folder; ?>" class="iconlink"><i class="icon-trash"></i></a></td>
+            <td class="center"><i class="icon-folder-close iconlink"></i></td>
             <td><a href="media.php?action=list&path=<?= $path.$folder; ?>" class="pathlink"><?= htmlspecialchars($folder); ?></a></td>
             <td></td>
         </tr>
@@ -50,10 +50,10 @@
             foreach ($files as $file):
         ?>
         <tr>
-        	<td></td>
-            <td><a href="media.php?action=rmfile&path=<?= $path.$file; ?>" class="iconlink"><i class="icon-trash"></i></a></td>
+            <td class="center"><a href="media.php?action=rmfile&path=<?= $path.$file; ?>" class="iconlink"><i class="icon-trash"></i></a></td>
+            <td class="center"><i class="icon-file iconlink"></i></td>
             <td><a href="../media/<?= $path.$file; ?>" class="pathlink"><?= htmlspecialchars($file); ?></a></td>
-            <td><?= filesize($app->Mediatizer->getPath().$file); ?></td>
+            <td><?= \Kompakt\Helpers\Beautifier::Filesize(filesize($app->Mediatizer->getPath().$file)); ?></td>
         </tr>
         <?php
             endforeach;

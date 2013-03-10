@@ -14,7 +14,7 @@ if (empty($_GET['token']) OR !$app->User->checkToken($_GET['token'])) {
 } elseif (is_dir('../media/'.$_GET['path'].$_POST['folderName'])) {
 	$app->Error->registerMessage($app->Locales->getKey('folderAlreadyExists'));
 } else {
-	mkdir('../media/'.$_GET['path'].$_POST['folderName']).'/');
+	mkdir('../media/'.$_GET['path'].$_POST['folderName'].'/');
 }
 
 ?>
