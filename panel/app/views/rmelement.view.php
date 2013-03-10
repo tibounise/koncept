@@ -6,7 +6,7 @@
 	if (!$app->Error->issetMessage()) {
 ?>
 <div class="center">
-	<h1><?= $app->Locales->getKey('confirmationRemoveArticle'); ?></h1>
+	<h1><?= $app->Locales->getKey('confirmationRemoveElement'); ?></h1>
 	
 	<hr />
 	

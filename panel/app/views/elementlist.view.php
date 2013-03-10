@@ -9,7 +9,7 @@
     if (count($index['files']) == 0) {
 ?>
 <div class="center">
-    <h2>Aucun article est actuellement enregistré.</h2>
+    <h2><?= $app->Locales->getKey('noElements'); ?></h2>
     <br />
     <a href="element.php?action=new"><button class="btn"><?= $app->Locales->getKey('newElement'); ?></button></a>
 </div>

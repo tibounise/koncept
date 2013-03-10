@@ -20,7 +20,7 @@
 	"UNKNOWNformat":"Format inconnu",
 	"MARKDOWNformat":"Format Markdown",
 	"TIMESTAMPformat":"Format timestamp",
-	"confirmationRemoveArticle":"Êtes vous sûr de vouloir suppimer cet élément ?",
+	"confirmationRemoveElement":"Êtes vous sûr de vouloir suppimer cet élément ?",
 	"yes":"Oui",
 	"no":"Non",
 	"idNotFound":"ID non trouvé",
@@ -61,5 +61,7 @@
 	"fileSuccessfullyDeleted":"Le fichier a été supprimé avec succès",
 	"dateFormat":"d/m/Y",
 	"Backup":"Sauvegarde",
-	"abilities":"Aptitudes"
+	"abilities":"Aptitudes",
+	"separateW/Commas":"Séparer par des virgules",
+	"noElements":"Aucun élément est actuellement enregistré."
 }
