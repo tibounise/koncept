@@ -6,27 +6,24 @@
 
 <hr />
 
-<form action="processor.php?action=returnbackup" class="standard-form">
-	<h2>Sauvegarde des médias</h2>
+<form action="processor.php?action=backup" class="standard-form" method="POST">
+	<h2><?= $app->Locales->getKey('mediaBackup'); ?></h2>
 	<div class="input-control">
+		<p class="input-label"><?= $app->Locales->getKey('enableMediaBackup'); ?> :</p>
 		<div class="input-field">
-			<p class="input-label">Activer la sauvegarde des média <input type="checkbox" /></p>
+			<?= $app->Locales->getKey('yes'); ?><input type="radio" name="mediaBackup" value="true" checked /> <?= $app->Locales->getKey('no'); ?><input type="radio" name="mediaBackup" value="false" />
 		</div>
 	</div>
-	<hr />
 	<h2>Sauvegarde des éléments</h2>
 	<div class="input-control">
+		<p class="input-label"><?= $app->Locales->getKey('enableElementBackup'); ?> :</p>
 		<div class="input-field">
-			<p class="input-label">Activer la sauvegarde des éléments <input type="checkbox" /></p>
+			<?= $app->Locales->getKey('yes'); ?><input type="radio" name="elementBackup" value="true" checked /> <?= $app->Locales->getKey('no'); ?><input type="radio" name="elementBackup" value="false" />
 		</div>
 	</div>
 	<div class="input-control">
-		<p class="input-label">Type de sauvegarde :</p>
 		<div class="input-field">
-			<select>
-				<option>Combinée (1 fichier)</option>
-				<option>Séparée (plusieurs fichiers)</option>
-			</select>
+			<input type="submit" class="btn" value="<?= $app->Locales->getKey('makeBackup'); ?>" />	
 		</div>
 	</div>
 </form>

@@ -12,6 +12,7 @@ class Beautifier {
 	 * @param string $json JSON to beautify
 	 * @return string Beautified JSON
 	 * @access public
+	 * @static
 	 */
 	public static function JSON($json) {
 		if (version_compare(PHP_VERSION, '5.4.0') >= 0) {
@@ -21,6 +22,14 @@ class Beautifier {
 		}
 	}
 
+	/**
+	 * Transform a raw filesize() to a readable format
+	 * 
+	 * @param int $filesize Filesize in octets
+	 * @return string Readable file size
+	 * @access public
+	 * @static
+	 */
 	public static function Filesize($filesize) {
     	$units = array('o','Ko','Mo','Go','To','Po','Eo','Zo','Yo');
     	$power = $filesize > 0 ? floor(log($filesize, 1000)) : 0;

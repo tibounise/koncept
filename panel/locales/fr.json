@@ -64,5 +64,10 @@
 	"abilities":"Aptitudes",
 	"separateW/Commas":"Séparer par des virgules",
 	"noElements":"Aucun élément est actuellement enregistré.",
-	"fileUploaded":"Le fichier a été mis en ligne"
+	"fileUploaded":"Le fichier a été mis en ligne",
+	"enableMediaBackup":"Activer la sauvegarde des média",
+	"mediaBackup":"Sauvegarde des médias",
+	"makeBackup":"Lancer la sauvegarde",
+	"backupType":"Type de sauvegarde",
+	"enableElementBackup":"Activer la sauvegarde des éléments"
 }

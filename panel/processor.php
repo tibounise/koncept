@@ -38,6 +38,11 @@ switch ($_GET['action']) {
 		require 'app/views/rmfile.processor.view.php';
 		break;
 
+	case 'backup':
+		require 'app/controllers/backup.processor.controller.php';
+		require 'app/views/backup.processor.view.php';
+		break;
+
 	default:
 		# code...
 		break;

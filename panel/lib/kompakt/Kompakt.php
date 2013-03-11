@@ -22,6 +22,7 @@ require 'handlers/mediatizer.class.php';
 require 'helpers/sanitize.class.php';
 require 'helpers/stringcheck.class.php';
 require 'helpers/beautifier.class.php';
+require 'helpers/archiver.class.php';
 
 // Define our application element
 $app = new Kompakt();
