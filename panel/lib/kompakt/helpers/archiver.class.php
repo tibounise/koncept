@@ -6,6 +6,15 @@ namespace Kompakt\Helpers;
  * @package Kompakt\Helpers
  */
 class Archiver {
+    /**
+     * Makes a zip archive including recursively folders and files, keeping their structure
+     * 
+     * @param string $source Source path
+     * @param stirng $destination Destination path (where the archive will be stored)
+     * @return ZipArchive ZipArchive
+     * @access public
+     * @static
+     */
     public static function ZipMaker($source,$destination) {
         $zipHandler = new \ZipArchive();
         $zipHandler->open($destination, \ZIPARCHIVE::CREATE);
