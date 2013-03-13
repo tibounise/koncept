@@ -11,6 +11,16 @@ if (!$app->Error->issetMessage()) {
     header('Content-Length: '.filesize($backupPath));
     readfile($backupPath);
     unlink($backupPath);
+} else {
+	require 'assets/php/header.view.php';
+?>
+<div class="center">
+    <h1><?= $app->Error->getMessage(); ?></h1>
+    <br />
+    <a href="backup.php"><button class="btn"><?= $app->Locales->getKey('getBack'); ?></button></a>
+</div>
+<?php
+    require 'assets/php/footer.view.php';
 }
 
 ?>

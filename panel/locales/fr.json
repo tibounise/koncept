@@ -69,5 +69,7 @@
 	"mediaBackup":"Sauvegarde des médias",
 	"makeBackup":"Lancer la sauvegarde",
 	"backupType":"Type de sauvegarde",
-	"enableElementBackup":"Activer la sauvegarde des éléments"
+	"enableElementBackup":"Activer la sauvegarde des éléments",
+	"nothingToBackup":"Rien à sauvegarder",
+	"getBack":"Revenir en arrière"
 }

@@ -11,7 +11,7 @@ if (empty($_POST['mediaBackup']) || empty($_POST['elementBackup'])) {
 	$app->Error->registerMessage($app->Locales->getKey('missingFieldsOrEmpty'));
 } else {
 	if ($_POST['mediaBackup'] == 'false' && $_POST['elementBackup'] == 'false') {
-		$app->Error->registerMessage('CACALOL INDECIS');
+		$app->Error->registerMessage($app->Locales->getKey('nothingToBackup'));
 	} else {
 		$backupPath = 'tmp/backup.zip';
 
