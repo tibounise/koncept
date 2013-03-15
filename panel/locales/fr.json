@@ -85,5 +85,9 @@
 	"routeRegex":"REGEX de la route",
 	"routeRegexExplanation":"cette REGEX doit correspondre à l'URL à cibler",
 	"createRoute":"Créer la route",
-	"noDefinedRoutes":"Aucune route définie"
+	"noDefinedRoutes":"Aucune route définie",
+	"routeDoesntExists":"Route inexistante.",
+	"confirmationRemoveRoute":"Êtes vous sûr de vouloir supprimer cette route ?",
+	"routeDeleted":"La route a été supprimée.",
+	"routeAdded":"La route a été ajoutée."
 }

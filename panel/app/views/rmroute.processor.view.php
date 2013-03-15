@@ -12,7 +12,7 @@
 	} else {
 ?>
 <div class="center">
-	<h1><?= $app->Locales->getKey('routeAdded'); ?></h1>
+	<h1><?= $app->Locales->getKey('routeDeleted'); ?></h1>
 	<hr />
 	<a href="router.php?action=list"><button class="btn"><?= $app->Locales->getKey('getBack'); ?></button></a>
 </div>

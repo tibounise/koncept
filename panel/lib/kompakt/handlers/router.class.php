@@ -27,6 +27,14 @@ class Router {
 	public function issetRoute($id) {
 		return isset($this->routingInfos[$id]);
 	}
+
+	public function getRoute($id) {
+		return $this->routingInfos[$id];
+	}
+
+	public function removeRoute($id) {
+		unset($this->routingInfos[$id]);
+	}
 }
 
 ?>

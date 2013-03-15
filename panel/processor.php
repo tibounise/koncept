@@ -48,6 +48,11 @@ switch ($_GET['action']) {
 		require 'app/views/newroute.processor.view.php';
 		break;
 
+	case 'rmroute':
+		require 'app/controllers/rmroute.processor.controller.php';
+		require 'app/views/rmroute.processor.view.php';
+		break;
+
 	default:
 		# code...
 		break;
