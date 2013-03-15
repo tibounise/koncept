@@ -1,36 +1,35 @@
 <?php
     require 'assets/php/header.view.php';
-?>
 
-<h1><?= $app->Locales->getKey('elementList'); ?></h1>
-<hr />
-
-<?php
     if (count($index['files']) == 0) {
 ?>
+<h1><?= $app->Locales->getKey('elementList'); ?></h1>
+
+<hr />
+
 <div class="center">
     <h2><?= $app->Locales->getKey('noElements'); ?></h2>
     <br />
     <a href="element.php?action=new"><button class="btn"><?= $app->Locales->getKey('newElement'); ?></button></a>
 </div>
+
 <?php
     } else {
 ?>
 
-<a href="element.php?action=new"><button class="btn"><?= $app->Locales->getKey('newElement'); ?></button></a>
+<h1 class="pull-left"><?= $app->Locales->getKey('elementList'); ?></h1> <a href="element.php?action=new"><button class="btn btn-mini pull-right"><?= $app->Locales->getKey('newElement'); ?></button></a>
 
-<br />
-<br />
+<hr />
 
 <table class="listElements">
     <thead>
         <tr>
             <th class="span5"></th>
             <th class="span5"></th>
-            <th><?= $app->Locales->getKey('elementName'); ?></th>
-            <th class="span150"><?= $app->Locales->getKey('elementId'); ?></th>
-            <th class="span200"><?= $app->Locales->getKey('elementCreationDate'); ?></th>
-            <th class="span300"><?= $app->Locales->getKey('elementLastUpdateDate'); ?></th>
+            <th><?= $app->Locales->getKey('title'); ?></th>
+            <th class="span60"><?= $app->Locales->getKey('id'); ?></th>
+            <th class="span150"><?= $app->Locales->getKey('creationDate'); ?></th>
+            <th class="span150"><?= $app->Locales->getKey('lastUpdate'); ?></th>
         </tr>
     </thead>
     <tbody>
@@ -51,10 +50,9 @@
         ?>
     </tbody>
 </table>
-<?php
-    }
-?>
 
 <?php
+    }
+
     require 'assets/php/footer.view.php';
 ?>

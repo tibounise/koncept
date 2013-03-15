@@ -19,7 +19,7 @@ if (empty($_POST['mediaBackup']) || empty($_POST['elementBackup'])) {
 		$zipHandler->open($backupPath, \ZIPARCHIVE::CREATE);
 
 		// Deleting remainings files
-		$filesToCheck = array($backupPath,'tmp/media.zip','tmp/elements.zip','tmp/elements.json');
+		$filesToCheck = array($backupPath,'tmp/media.zip','tmp/elements.zip','tmp/config.zip');
 		foreach ($filesToCheck as $file) {
 			if (file_exists($file))
 				unlink($file);
@@ -34,6 +34,11 @@ if (empty($_POST['mediaBackup']) || empty($_POST['elementBackup'])) {
 			\Kompakt\Helpers\Archiver::ZipMaker('../data/','tmp/elements.zip');
 			$zipHandler->addFromString('elements.zip', file_get_contents('tmp/elements.zip'));
 			unlink('tmp/elements.zip');
+		}
+		if ($_POST['configBackup'] == 'true') {
+			\Kompakt\Helpers\Archiver::ZipMaker('../config/','tmp/config.zip');
+			$zipHandler->addFromString('config.zip',file_get_contents('tmp/config.zip'));
+			unlink('tmp/config.zip');
 		}
 
 		$zipHandler->close();

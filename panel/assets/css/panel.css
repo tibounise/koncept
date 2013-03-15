@@ -98,6 +98,7 @@ hr {
 	border: 0;
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #fff;
+	clear: both;
 }
 
 .text-tip {
@@ -169,6 +170,11 @@ p.input-label {
     margin: 5px;
 }
 
+.btn.btn-mini {
+	padding: 5px;
+	font-size: 12px;
+}
+
 .btn:active {
 	background-image: -moz-linear-gradient(top, #208197, #29a5c1);
     background-image: -ms-linear-gradient(top, #208197, #29a5c1);
@@ -206,6 +212,9 @@ table.listElements {
 .span25 {
 	width: 25px;
 }
+.span60 {
+	width: 60px;
+}
 .span100 {
 	width: 100px;
 }
@@ -232,6 +241,26 @@ table.listElements {
 .pathlink {
 	color: #29a5c1;
 	text-decoration: none;
+}
+
+.highlight {
+	padding: 4px;
+	background-color: #cd1c69;
+	border: 1px solid #cd1c69;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.code {
+	font-family: Courier,"Courier New","Lucida Console","Monaco",Serif;
+}
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
 }
 
 @media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
@@ -288,5 +317,9 @@ table.listElements {
 
 	.listElements {
 		font-size: 11px;
+	}
+
+	.pull-left,.pull-right {
+		float:none;
 	}
 }

@@ -1,14 +1,12 @@
 <?php
     require 'assets/php/header.view.php';
-?>
 
+	if ($itemcount == 0) {
+?>
 <h1><?= $app->Locales->getKey('mediaList'); ?></h1>
 
 <hr />
 
-<?php
-	if ($itemcount == 0) {
-?>
 <div class="center">
 	<p><?= $app->Locales->getKey('noFilesOrFolderIn'); ?> <strong>/<?= $path; ?></strong></p>
 	<br />
@@ -18,11 +16,12 @@
 <?php
 	} else {
 ?>
-<a href="media.php?action=upload&path=<?= $path; ?>"><button class="btn">Ajouter un fichier</button></a>
-<a href="media.php?action=addfolder&path=<?= $path; ?>"><button class="btn">Ajouter un dossier</button></a>
+<h1 class="pull-left"><?= $app->Locales->getKey('mediaList'); ?></h1>
 
-<br />
-<br />
+<a href="media.php?action=upload&path=<?= $path; ?>" class="pull-right"><button class="btn btn-mini">Ajouter un fichier</button></a>
+<a href="media.php?action=addfolder&path=<?= $path; ?>" class="pull-right"><button class="btn btn-mini">Ajouter un dossier</button></a>
+
+<hr />
 
 <table class="listElements">
     <thead>
@@ -30,7 +29,7 @@
         	<th class="span5"></th>
             <th class="span5"></th>
             <th>Nom</th>
-            <th class="span25">Poids</th>
+            <th class="span60">Poids</th>
         </tr>
     </thead>
     <tbody>
@@ -62,8 +61,6 @@
 </table>
 <?php
 	}
-?>
 
-<?php
     require 'assets/php/footer.view.php';
 ?>

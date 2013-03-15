@@ -43,6 +43,11 @@ switch ($_GET['action']) {
 		require 'app/views/backup.processor.view.php';
 		break;
 
+	case 'newroute':
+		require 'app/controllers/newroute.processor.controller.php';
+		require 'app/views/newroute.processor.view.php';
+		break;
+
 	default:
 		# code...
 		break;

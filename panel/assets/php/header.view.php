@@ -24,7 +24,7 @@
             <div class="icon-bar">
                 <a href="element.php?action=list" class="icon"><i class="icon-file"></i></a>
                 <a href="media.php?action=list" class="icon"><i class="icon-camera-retro"></i></a>
-                <a href="#" class="icon"><i class="icon-sitemap"></i></a>
+                <a href="router.php?action=list" class="icon"><i class="icon-sitemap"></i></a>
             </div>
         </div>
 
