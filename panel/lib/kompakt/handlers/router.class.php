@@ -35,6 +35,12 @@ class Router {
 	public function removeRoute($id) {
 		unset($this->routingInfos[$id]);
 	}
+
+	public function editRoute($id,$regex,$controller,$variables) {
+		$this->routingInfos[$id] = array('regex' => $regex,
+										 'controller' => $controller,
+										 'variables' => $variables);
+	}
 }
 
 ?>

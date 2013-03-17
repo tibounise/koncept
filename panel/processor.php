@@ -53,6 +53,11 @@ switch ($_GET['action']) {
 		require 'app/views/rmroute.processor.view.php';
 		break;
 
+	case 'editroute':
+		require 'app/controllers/editroute.processor.controller.php';
+		require 'app/views/editroute.processor.view.php';
+		break;
+
 	default:
 		# code...
 		break;

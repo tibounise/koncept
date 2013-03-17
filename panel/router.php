@@ -17,6 +17,11 @@ switch ($_GET['action']) {
 		require 'app/controllers/rmroute.controller.php';
 		require 'app/views/rmroute.view.php';
 		break;
+
+	case 'edit':
+		require 'app/controllers/editroute.controller.php';
+		require 'app/views/editroute.view.php';
+		break;
 	
 	default:
 		# code...

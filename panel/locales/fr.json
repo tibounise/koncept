@@ -89,5 +89,8 @@
 	"routeDoesntExists":"Route inexistante.",
 	"confirmationRemoveRoute":"Êtes vous sûr de vouloir supprimer cette route ?",
 	"routeDeleted":"La route a été supprimée.",
-	"routeAdded":"La route a été ajoutée."
+	"routeAdded":"La route a été ajoutée.",
+	"editRoute":"Éditer une route",
+	"updateRoute":"Mettre à jour la route",
+	"routeUpdated":"La route a été mise à jour"
 }
