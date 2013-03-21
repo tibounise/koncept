@@ -92,5 +92,6 @@
 	"routeAdded":"La route a été ajoutée.",
 	"editRoute":"Éditer une route",
 	"updateRoute":"Mettre à jour la route",
-	"routeUpdated":"La route a été mise à jour"
+	"routeUpdated":"La route a été mise à jour",
+	"updateSettings":"Mettre à jour les paramètres"
 }
