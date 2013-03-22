@@ -6,23 +6,23 @@
 
 <hr />
 
-<form class="standard-form">
+<form class="standard-form" method="POST" action="processor.php?action=updatesettings">
 	<div class="input-control">
-		<p class="input-label">Nom d'utilisateur :</p>
+		<p class="input-label"><?= $app->Locales->getKey('username'); ?> :</p>
 		<div class="input-field">
 			<input type="text" name="username" value="<?= $app->Config->getKey('username'); ?>" pattern="[a-zA-Z0-9]+" required />
 		</div>
 	</div>
 	<div class="input-control">
-		<p class="input-label">Mot de passe <span class="text-tip">(laisser vide si vous ne voulez pas le remplacer)</span> :</p>
+		<p class="input-label"><?= $app->Locales->getKey('password'); ?> <span class="text-tip">(laisser vide si vous ne voulez pas le remplacer)</span> :</p>
 		<div class="input-field">
 			<input type="password" name="password" />
 		</div>
 	</div>
 	<div class="input-control">
-		<p class="input-label">Taille maximalle des médias :</p>
+		<p class="input-label"><?= $app->Locales->getKey('maxMediaSize'); ?> :</p>
 		<div class="input-field">
-			<input type="text" name="maxMediaSize" pattern="[0-9]{1,}" value="<?= $app->Config->getKey(''); ?>" required />
+			<input type="text" name="maxMediaSize" pattern="[0-9]{1,}" value="<?= $app->Config->getKey('uploadMax'); ?>" required />
 		</div>
 	</div>
 	<div class="input-control">

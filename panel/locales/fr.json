@@ -93,5 +93,7 @@
 	"editRoute":"Éditer une route",
 	"updateRoute":"Mettre à jour la route",
 	"routeUpdated":"La route a été mise à jour",
-	"updateSettings":"Mettre à jour les paramètres"
+	"updateSettings":"Mettre à jour les paramètres",
+	"maxMediaSize":"Taille maximale des médias",
+	"settingsUpdated":"Les paramètres ont été mis à jour"
 }

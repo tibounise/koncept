@@ -58,6 +58,11 @@ switch ($_GET['action']) {
 		require 'app/views/editroute.processor.view.php';
 		break;
 
+	case 'updatesettings':
+		require 'app/controllers/settings.processor.controller.php';
+		require 'app/views/settings.processor.view.php';
+		break;
+
 	default:
 		# code...
 		break;

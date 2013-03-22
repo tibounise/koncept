@@ -19,11 +19,15 @@ class User {
 		$_SESSION['token'] = null;
 	}
 
+	public static function hash($input) {
+		return hash('sha256',$input);
+	}
+
 	public static function logProtection() {
-		if (isset($_SESSION['looged']) && $_SESSION['logged']) {
+		if (isset($_SESSION['logged']) && $_SESSION['logged']) {
 			return true;
 		} else {
-			header('Location: login');
+			header('Location: login.php');
 		}
 	}
 
