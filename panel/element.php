@@ -4,23 +4,23 @@ require 'lib/kompakt/Kompakt.php';
 
 switch ($_GET['action']) {
 	case 'list':
-		require 'app/controllers/elementlist.controller.php';
-		require 'app/views/elementlist.view.php';
+		require 'app/controllers/element/elementlist.controller.php';
+		require 'app/views/element/elementlist.view.php';
 		break;
 
 	case 'new':
-		require 'app/controllers/newelement.controller.php';
-		require 'app/views/newelement.view.php';
+		require 'app/controllers/element/newelement.controller.php';
+		require 'app/views/element/newelement.view.php';
 		break;
 
 	case 'remove':
-		require 'app/controllers/rmelement.controller.php';
-		require 'app/views/rmelement.view.php';
+		require 'app/controllers/element/rmelement.controller.php';
+		require 'app/views/element/rmelement.view.php';
 		break;
 
 	case 'edit':
-		require 'app/controllers/editelement.controller.php';
-		require 'app/views/editelement.view.php';
+		require 'app/controllers/element/editelement.controller.php';
+		require 'app/views/element/editelement.view.php';
 	
 	default:
 		# code...

@@ -4,63 +4,63 @@ require 'lib/kompakt/Kompakt.php';
 
 switch ($_GET['action']) {
 	case 'addelement':
-		require 'app/controllers/addelement.processor.controller.php';
-		require 'app/views/addelement.processor.view.php';
+		require 'app/controllers/element/addelement.processor.controller.php';
+		require 'app/views/element/addelement.processor.view.php';
 		break;
 
 	case 'rmelement':
-		require 'app/controllers/rmelement.processor.controller.php';
-		require 'app/views/rmelement.processor.view.php';
+		require 'app/controllers/element/rmelement.processor.controller.php';
+		require 'app/views/element/rmelement.processor.view.php';
 		break;
 	
 	case 'editelement':
-		require 'app/controllers/editelement.processor.controller.php';
-		require 'app/views/editelement.processor.view.php';
+		require 'app/controllers/element/editelement.processor.controller.php';
+		require 'app/views/element/editelement.processor.view.php';
 		break;
 
 	case 'uploadmedia':
-		require 'app/controllers/uploadmedia.processor.controller.php';
-		require 'app/views/uploadmedia.processor.view.php';
+		require 'app/controllers/media/uploadmedia.processor.controller.php';
+		require 'app/views/media/uploadmedia.processor.view.php';
 		break;
 
 	case 'addfolder':
-		require 'app/controllers/addfolder.processor.controller.php';
-		require 'app/views/addfolder.processor.view.php';
+		require 'app/controllers/media/addfolder.processor.controller.php';
+		require 'app/views/media/addfolder.processor.view.php';
 		break;
 
 	case 'rmfolder':
-		require 'app/controllers/rmfolder.processor.controller.php';
-		require 'app/views/rmfolder.processor.view.php';
+		require 'app/controllers/media/rmfolder.processor.controller.php';
+		require 'app/views/media/rmfolder.processor.view.php';
 		break;
 
 	case 'rmfile':
-		require 'app/controllers/rmfile.processor.controller.php';
-		require 'app/views/rmfile.processor.view.php';
+		require 'app/controllers/media/rmfile.processor.controller.php';
+		require 'app/views/media/rmfile.processor.view.php';
 		break;
 
 	case 'backup':
-		require 'app/controllers/backup.processor.controller.php';
-		require 'app/views/backup.processor.view.php';
+		require 'app/controllers/backup/backup.processor.controller.php';
+		require 'app/views/backup/backup.processor.view.php';
 		break;
 
 	case 'newroute':
-		require 'app/controllers/newroute.processor.controller.php';
-		require 'app/views/newroute.processor.view.php';
+		require 'app/controllers/route/newroute.processor.controller.php';
+		require 'app/views/route/newroute.processor.view.php';
 		break;
 
 	case 'rmroute':
-		require 'app/controllers/rmroute.processor.controller.php';
-		require 'app/views/rmroute.processor.view.php';
+		require 'app/controllers/route/rmroute.processor.controller.php';
+		require 'app/views/route/rmroute.processor.view.php';
 		break;
 
 	case 'editroute':
-		require 'app/controllers/editroute.processor.controller.php';
-		require 'app/views/editroute.processor.view.php';
+		require 'app/controllers/route/editroute.processor.controller.php';
+		require 'app/views/route/editroute.processor.view.php';
 		break;
 
 	case 'updatesettings':
-		require 'app/controllers/settings.processor.controller.php';
-		require 'app/views/settings.processor.view.php';
+		require 'app/controllers/settings/settings.processor.controller.php';
+		require 'app/views/settings/settings.processor.view.php';
 		break;
 
 	default:

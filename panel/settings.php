@@ -2,7 +2,7 @@
 
 require 'lib/kompakt/Kompakt.php';
 
-require 'app/controllers/settings.controller.php';
-require 'app/views/settings.view.php';
+require 'app/controllers/settings/settings.controller.php';
+require 'app/views/settings/settings.view.php';
 
 ?>
