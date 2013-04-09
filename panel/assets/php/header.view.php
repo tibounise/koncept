@@ -5,8 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>koncept:<?= $app->HtmlVars->getKey('title'); ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="assets/css/panel.css" />
-        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" />
+        <link rel="stylesheet/less" href="assets/css/panel.less" />
+        <link rel="stylesheet" href="assets/css/font-awesome.css" />
+        <script src="assets/js/less/less-1.3.3.min.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="header-bar">
