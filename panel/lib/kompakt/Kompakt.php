@@ -10,23 +10,12 @@ define('LOCALIZED',32);
 define('MEDIATIZER',64);
 define('ROUTER',128);
 
-/*~-- Handlers --~*/
-require 'handlers/kompakt.class.php';
-require 'handlers/fukon.class.php';
-require 'handlers/user.class.php';
-require 'handlers/elementy.class.php';
-require 'handlers/fetcher.class.php';
-require 'handlers/error.class.php';
-require 'handlers/mediatizer.class.php';
-require 'handlers/router.class.php';
-
-/*~-- Helpers --~*/
-require 'helpers/sanitize.class.php';
-require 'helpers/stringcheck.class.php';
-require 'helpers/beautifier.class.php';
-require 'helpers/archiver.class.php';
+spl_autoload_register(function($class) {
+	$classPath = 'lib/kompakt/'.str_replace('\\','/',$class).'.php';
+	if (file_exists($classPath)) require $classPath;
+});
 
 // Define our application element
-$app = new Kompakt();
+$app = new \Kompakt\Handlers\Kompakt();
 
 ?>

@@ -1,5 +1,7 @@
 <?php
 
+namespace Kompakt\Handlers;
+
 /**
  * @package Kompakt
  */
