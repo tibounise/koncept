@@ -2,16 +2,62 @@
 
 namespace Deone\Handlers;
 
+/**
+ * A class to fetch elements.
+ * 
+ * @package Deone
+ * @subpackage Handlers
+ */
 class Fetcher
 {
+	/**
+	 * Path to the data folder
+	 * @staticvar string Path to the data foler
+	 */
 	const PATH = 'data/';
+	/**
+	 * Name of the element
+	 * @access public
+	 * @var string Name of the element
+	 */
 	public $name;
+	/**
+	 * Content of the element
+	 * @access public
+	 * @var string Content of the element
+	 */
 	public $content;
+	/**
+	 * Metadatas of the element
+	 * @access public
+	 * @var array Metadatas of the elemnt
+	 */
 	public $metadata;
+	/**
+	 * Abilities of the element
+	 * @access public
+	 * @var array Abilities of the element
+	 */
 	public $abilities;
+	/**
+	 * Publication date of the element (timestamp)
+	 * @access public
+	 * @var integer Publication date of the element
+	 */
 	public $pubdate;
+	/**
+	 * Last edition of the element (timestamp)
+	 * @access public
+	 * @var integer Last edition of the element (timestamp)
+	 */
 	public $lastedit;
 
+	/**
+	 * Loads an element.
+	 * 
+	 * @param integer $id ID of the element
+	 * @return boolean Status of the execution of the function
+	 */
 	public function loadElement($id)
 	{
 		$index = json_decode(file_get_contents(self::PATH.'index.json'),true);
@@ -41,6 +87,11 @@ class Fetcher
 		}
 	}
 
+	/**
+	 * Debug functions.
+	 * 
+	 * Erase all existing HTML codes, prints the content of the article. Then die().
+	 */
 	public function debug() {
 		ob_clean();
 
