@@ -7,10 +7,17 @@ This bit is hard to explain, but let me try ... So instead of organizing your co
 # Frontend
 
 
+
 # Backend
 
 To access the backend go to /panel. Then, enter 'test' as login and 'test' as password.
 
 ## Elements
 
-The structure of the elements is very simple.
+The structure of the element is very simple. It has :
+ - Name
+ - Content
+ - Metadatas
+ - Abilities
+ - Timestamp of the last edition
+ - Timestamp of the creation
