@@ -28,4 +28,4 @@
             </div>
         </div>
 
-        <div class="content-frame">
+        <div class="content-frame <?= ($app->HtmlVars->issetKey('frame-class')) ? $app->HtmlVars->getKey('frame-class') : null; ?>">
