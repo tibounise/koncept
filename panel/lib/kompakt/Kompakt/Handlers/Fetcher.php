@@ -63,18 +63,20 @@ class Fetcher extends Elementy {
 	public $abilities;
 
 	public function hasAbility($ability) {
-		if (is_string($ability) && in_array($ability,$this->abilities)) {
+		if (is_string($ability) && in_array($ability,$this->abilities))
+		{
 			return true;
-		} elseif (is_array($ability)) {
+		}
+		elseif (is_array($ability))
+		{
 			foreach ($arbility as $item) {
 				if (!in_array($item,$this->abilities)) {
 					return false;
 				}
 			}
 			return true;
-		} else {
-			return false;
 		}
+		return false;
 	}
 
 	/**
@@ -94,9 +96,11 @@ class Fetcher extends Elementy {
 	 * @access public
 	 */
 	public function getElement($id) {
-		if (isset($this->index['files'][$id])) {
+		if (isset($this->index['files'][$id]))
+		{
 			$element = json_decode(file_get_contents($this->path.$this->index['files'][$id]),true);
-			if ($element !== null) {
+			if ($element !== null)
+			{
 				$this->name = $element['name'];
 				$this->content = $element['content'];
 				$this->metadata = $element['metadata'];
@@ -105,12 +109,9 @@ class Fetcher extends Elementy {
 				$this->lastedit = $element['lastedit'];
 				return true;
 			}
-			else {
-				return false;
-			}
-		} else {
 			return false;
 		}
+		return false;
 	}
 
 	/**
@@ -126,6 +127,7 @@ class Fetcher extends Elementy {
 		$element['abilities'] = $this->abilities;
 		$element['pubdate'] = $this->pubdate;
 		$element['lastedit'] = $this->lastedit;
+		
 		return file_put_contents($this->path.'element-'.$id.'.json',json_encode($element),LOCK_EX);
 	}
 
@@ -138,14 +140,16 @@ class Fetcher extends Elementy {
 	 */
 	public function deleteElement($id) {
 		$pathToElement = $this->path.'/element-'.$id.'.json';
-		if (is_writable($pathToElement)) {
+		
+		if (is_writable($pathToElement))
+		{
 			unlink($pathToElement);
 			$this->rmIndex($id);
 			$this->saveIndex();
 			return true;
-		} else {
-			return false;
 		}
+		
+		return false;
 	}
 }
 

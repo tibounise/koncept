@@ -19,10 +19,14 @@ class Elementy {
 	public function openIndex($indexpath) {
 		$this->indexpath = $indexpath;
 		$json = json_decode(file_get_contents($indexpath),true);
-		if ($json !== null) {
+
+		if ($json !== null)
+		{
 			$this->index = $json;
 			return true;
-		} else {
+		} 
+		else
+		{
 			return false;
 		}
 	}
@@ -65,9 +69,12 @@ class Elementy {
 	 * @access public
 	 */
 	public function getNewId() {
-		if (count($this->index['files']) == 0) {
+		if (count($this->index['files']) == 0)
+		{
 			return 0;
-		} else {
+		}
+		else
+		{
 			$array_keys = array_keys($this->index['files']);
 			rsort($array_keys);
 			return $array_keys[0] + 1;
