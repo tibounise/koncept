@@ -96,5 +96,6 @@
 	"updateSettings":"Mettre à jour les paramètres",
 	"maxMediaSize":"Taille maximale des médias",
 	"settingsUpdated":"Les paramètres ont été mis à jour",
-	"welcome":"Bienvenue sur koncept"
+	"welcome":"Bienvenue sur koncept",
+	"noActionProvided":"Aucune action à exécuter n'a été fournie"
 }

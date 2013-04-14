@@ -2,6 +2,8 @@
 
 require 'lib/kompakt/Kompakt.php';
 
+$_GET['action'] = (isset($_GET['action'])) ? $_GET['action'] : null;
+
 switch ($_GET['action']) {
 	case 'list':
 		require 'app/controllers/media/medialist.controller.php';
@@ -29,7 +31,8 @@ switch ($_GET['action']) {
 		break;
 	
 	default:
-		// No defined action
+		require 'app/controllers/noaction/noaction.controller.php';
+		require 'app/views/noaction/noaction.view.php';
 		break;
 }
 
