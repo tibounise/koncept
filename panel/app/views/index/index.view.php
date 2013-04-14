@@ -1,12 +1,9 @@
-<?php
-	$app->HtmlVars->setKey('title','home');
-?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>koncept:<?= $app->HtmlVars->getKey('title'); ?></title>
+        <title>koncept:home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet/less" href="assets/css/home.less" />
         <link rel="stylesheet" href="assets/css/font-awesome.css" />
