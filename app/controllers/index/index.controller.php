@@ -6,6 +6,6 @@ $fetcher->loadElement(0);
 
 var_dump($fetcher);
 
-$fetcher->debug();
+var_dump($fetcher->listElements());
 
 ?>

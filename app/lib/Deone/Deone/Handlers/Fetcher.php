@@ -54,9 +54,9 @@ class Fetcher
 
 	/**
 	 * Loads an element.
-	 * 
 	 * @param integer $id ID of the element
 	 * @return boolean Status of the execution of the function
+	 * @access public
 	 */
 	public function loadElement($id)
 	{
@@ -84,6 +84,24 @@ class Fetcher
 				$this->lastedit = $element['lastedit'];
 				return true;
 			}
+		}
+	}
+
+	/**
+	 * Generate an array with all the element's IDs.
+	 * @return array List of the IDs
+	 * @access public
+	 */
+	public function listElements() {
+		$index = json_decode(file_get_contents(self::PATH.'index.json'),true);
+		
+		if ($index === null)
+		{
+			return null;
+		}
+		else
+		{
+			return array_keys($index['files']);
 		}
 	}
 
