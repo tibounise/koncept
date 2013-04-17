@@ -10,6 +10,10 @@ class Deone {
 	public static function getFetcher() {
 		return new \Deone\Handlers\Fetcher;
 	}
+
+	public static function getRouter() {
+		return new \Deone\Handlers\Router;
+	}
 }
 
 ?>
