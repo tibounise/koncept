@@ -1,11 +1,7 @@
 <?php
 
-$fetcher = $a->getFetcher();
+$router = $a->getRouter();
 
-$fetcher->loadElement(0);
-
-var_dump($fetcher);
-
-var_dump($fetcher->listElements());
+var_dump($router->getRoute());
 
 ?>
