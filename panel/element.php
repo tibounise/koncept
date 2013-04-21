@@ -23,6 +23,7 @@ switch ($_GET['action']) {
 	case 'edit':
 		require 'app/controllers/element/editelement.controller.php';
 		require 'app/views/element/editelement.view.php';
+		break;
 	
 	default:
 		require 'app/controllers/noaction/noaction.controller.php';
