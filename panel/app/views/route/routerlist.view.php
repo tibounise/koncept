@@ -16,7 +16,6 @@
 		<tr>
 			<th><?= $app->Locales->getKey('mask'); ?></th>
 			<th><?= $app->Locales->getKey('controller'); ?></th>
-			<th><?= $app->Locales->getKey('variables'); ?></th>
 			<th><?= $app->Locales->getKey('actions'); ?></th>
 		</tr>
 	</thead>
@@ -27,7 +26,6 @@
 		<tr>
 			<td><span class="highlight code"><?= $route->regex; ?></span></td>
 			<td><?= $route->controller; ?></td>
-			<td><?= implode(' / ',$route->variables); ?></td>
 			<td>
 				<a href="router.php?action=delete&id=<?= $key; ?>" class="iconlink"><i class="icon-trash"></i></a>
 				&nbsp;

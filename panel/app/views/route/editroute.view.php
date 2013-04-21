@@ -30,12 +30,6 @@
 		</div>
 	</div>
 	<div class="input-control">
-		<p class="input-label"><?= $app->Locales->getKey('variables'); ?> <span class="text-tip">(<?= $app->Locales->getKey('separateW/Commas'); ?>) </span>:</p>
-		<div class="input-field">
-			<input type="text" name="routeVariables" value="<?= implode(',',$route['variables']); ?>" />
-		</div>
-	</div>
-	<div class="input-control">
 		<div class="input-field">
 			<input type="submit" class="btn" value="<?= $app->Locales->getKey('updateRoute'); ?>" />
 		</div>

@@ -8,10 +8,10 @@ $app->Router->loadRouting('../config/routes.json');
 
 $app->HtmlVars->setKey('title','router');
 
-if (empty($_POST['routeRegex']) || empty($_POST['routeController']) || empty($_POST['routeVariables'])) {
-	$app->Error->registerMessage('BIDIOU');
+if (empty($_POST['routeRegex']) || empty($_POST['routeController'])) {
+	$app->Error->registerMessage('missingFieldsOrEmpty');
 } else {
-	$app->Router->registerNewRoute($_POST['routeRegex'],$_POST['routeController'],explode(',',$_POST['routeVariables']));
+	$app->Router->registerNewRoute($_POST['routeRegex'],$_POST['routeController']);
 	$app->Router->saveRouting();
 }
 

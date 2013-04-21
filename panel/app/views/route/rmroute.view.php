@@ -18,7 +18,6 @@
 
 	<p><strong><?= $app->Locales->getKey('mask'); ?> : </strong><?= $route['regex']; ?></p>
 	<p><strong><?= $app->Locales->getKey('controller'); ?> : </strong><?= $route['controller']; ?></p>
-	<p><strong><?= $app->Locales->getKey('variables'); ?> : </strong><?= implode(' — ',$route['variables']); ?></p>
 
 	<a href="processor.php?action=rmroute&id=<?= $_GET['id']; ?>&token=<?= \Kompakt\Handlers\User::getToken(); ?>"><button class="btn"><?= $app->Locales->getKey('yes'); ?></button></a>
 	<a href="router.php?action=list"><button class="btn"><?= $app->Locales->getKey('no'); ?></button></a>

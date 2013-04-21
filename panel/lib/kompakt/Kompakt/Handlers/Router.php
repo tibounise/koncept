@@ -20,8 +20,7 @@ class Router {
 
 	public function registerNewRoute($regex,$controller,$variables) {
 		$this->routingInfos[] = array('regex' => $regex,
-									  'controller' => $controller,
-									  'variables' => $variables);
+									  'controller' => $controller);
 	}
 
 	public function issetRoute($id) {
@@ -38,8 +37,7 @@ class Router {
 
 	public function editRoute($id,$regex,$controller,$variables) {
 		$this->routingInfos[$id] = array('regex' => $regex,
-										 'controller' => $controller,
-										 'variables' => $variables);
+										 'controller' => $controller);
 	}
 }
 
