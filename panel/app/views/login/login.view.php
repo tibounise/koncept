@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width" />
         <meta charset="utf-8" />
         <link rel="stylesheet" href="assets/css/login.css" />
-        <link rel="stylesheet" href="assets/css/font-awesome.css" />
+        <link rel="stylesheet" href="assets/css/font-awesome/font-awesome.min.css" />
     </head>
     <body>
 	<div class="login-box">
