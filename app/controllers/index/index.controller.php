@@ -2,6 +2,6 @@
 
 $router = $a->getRouter();
 
-var_dump($router->getRoute());
+var_dump($router->rawUrl());
 
 ?>
