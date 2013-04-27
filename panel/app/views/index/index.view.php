@@ -25,7 +25,7 @@
 				<a href="element.php?action=list"><div class="item"><i class="icon-file"></i></div></a>
 				<a href="media.php?action=list"><div class="item"><i class="icon-camera"></i></div></a>
 				<a href="router.php?action=list"><div class="item"><i class="icon-sitemap"></i></div></a>
-				<a href="settings.php"><div class="item"><i class="icon-cogs"></i></div></a>
+				<a href="module.php?action=list"><div class="item"><i class="icon-lightbulb"></i></div></a>
 			</div>
 		</div>
 	</body>
