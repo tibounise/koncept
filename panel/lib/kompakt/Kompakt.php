@@ -9,6 +9,8 @@ define('ERROR',16);
 define('LOCALIZED',32);
 define('MEDIATIZER',64);
 define('ROUTER',128);
+define('MODULATOR',256);
+define('SOURCER',512);
 
 spl_autoload_register(function($class) {
 	$classPath = 'lib/kompakt/'.str_replace('\\','/',$class).'.php';
