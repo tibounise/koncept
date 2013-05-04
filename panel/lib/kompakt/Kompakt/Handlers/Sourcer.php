@@ -5,7 +5,7 @@ namespace Kompakt\Handlers;
 /**
  * @package Kompakt\Handlers
  */
-class Modulator
+class Sourcer
 {
 	protected $sources = null;
 	protected $indexpath = '../config/sources.json';
@@ -16,8 +16,8 @@ class Modulator
 
 		if ($indexFile !== null)
 		{
-			$this->source = json_decode($indexFile,true);
-			return $this->source !== null;
+			$this->sources = json_decode($indexFile,true);
+			return $this->sources !== null;
 		}
 		else
 		{
@@ -27,7 +27,10 @@ class Modulator
 
 	public function saveSourceIndex()
 	{
-		file_put_contents($this->indexpath,json_encode($this->source));
+		if (file_put_contents($this->indexpath,json_encode($this->sources)) === false)
+		{
+			throw new \Exception('Unable to write to the source file');
+		}
 	}
 
 	public function listPackages()
@@ -35,15 +38,15 @@ class Modulator
 		$packages = array();
 		foreach ($this->sources as $source)
 		{
-			$curlHandler = curl_init($source.'/pkgs.json');
-			curl_setopt($curlHandler,CURLOPT_HEADER,0);
-			curl_setopt($curlHandler,CURLOPT_RETURNTRANSFER,0);
+			$curlHandler = curl_init($source['url'].'/pkgs.json');
+			curl_setopt($curlHandler,CURLOPT_HEADER,false);
+			curl_setopt($curlHandler,CURLOPT_RETURNTRANSFER,true);
 			$packagesResult = json_decode(curl_exec($curlHandler),true);
 			curl_close($curlHandler);
 
 			if ($packagesResult === null)
 			{
-				throw new \Exception('Unable to download from : '.$source);
+				throw new \Exception('Unable to download from : '.$source['url']);
 			}
 
 			$packages = array_merge($packages,$packagesResult);
@@ -54,14 +57,18 @@ class Modulator
 
 	public function addSource($url)
 	{
-		$curlHandler($source.'/info.json');
-		curl_setopt($curlHandler,CURLOPT_HEADER,0);
-		curl_setopt($curlHandler,CURLOPT_RETURNTRANSFER,0);
+		$curlHandler = curl_init($url.'/info.json');
+		curl_setopt($curlHandler,CURLOPT_HEADER,false);
+		curl_setopt($curlHandler,CURLOPT_RETURNTRANSFER,true);
 		$sourceInfo = json_decode(curl_exec($curlHandler),true);
 		curl_close($curlHandler);
 
 		if ($sourceInfo !== null)
 		{
+			if ($this->issetSourceByID($sourceInfo['identifier']))
+			{
+				throw new \Exception('Another source with the same identifier has already been added');
+			}
 			$this->sources[] = array('identifier' => $sourceInfo['identifier'],'url' => $url);
 		}
 		else
@@ -70,9 +77,53 @@ class Modulator
 		}
 	}
 
+	public function deleteSource($id)
+	{
+		unset($this->sources[$id]);
+	}
+
 	public function listSources()
 	{
 		return $this->sources;
+	}
+
+	public function issetSourceByUrl($url)
+	{
+		if (count($this->sources) == 0)
+		{
+			return false;
+		}
+
+		foreach ($this->sources as $source)
+		{
+			if ($source['url'] == $url)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public function issetSourceByID($identifier)
+	{
+		if (count($this->sources) == 0)
+		{
+			return false;
+		}
+
+		foreach ($this->sources as $source)
+		{
+			if ($source['identifier'] == $identifier)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public function issetSourceByIndex($index)
+	{
+		return isset($this->sources[$index]);
 	}
 }
 

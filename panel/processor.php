@@ -65,6 +65,16 @@ switch ($_GET['action']) {
 		require 'app/views/settings/settings.processor.view.php';
 		break;
 
+	case 'addsource':
+		require 'app/controllers/source/addsource.processor.controller.php';
+		require 'app/views/source/addsource.processor.view.php';
+		break;
+
+	case 'addmodule':
+		require 'app/controllers/module/addmodule.processor.controller.php';
+		require 'app/views/module/addmodule.processor.view.php';
+		break;
+
 	default:
 		require 'app/controllers/noaction/noaction.controller.php';
 		require 'app/views/noaction/noaction.view.php';

@@ -7,6 +7,6 @@ $app->configureLocales('locales/'.$app->Config->getKey('language').'.json');
 
 $app->Modulator->loadModuleIndex();
 
-$moduleList = $app->Modulator->listModules();
+$moduleList = $app->Modulator->fullListModules();
 
 ?>
