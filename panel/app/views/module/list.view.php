@@ -17,7 +17,7 @@
 			<th><?= $app->Locales->getKey('name'); ?></th>
 			<th><?= $app->Locales->getKey('identifier'); ?></th>
 			<th><?= $app->Locales->getKey('version'); ?></th>
-			<th></th>
+			<th class="center span25"></th>
 		</tr>
 	</thead>
 	<tbody>

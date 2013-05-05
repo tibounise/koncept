@@ -15,7 +15,7 @@
 		<tr>
 			<th><?= $app->Locales->getKey('sourceUrl'); ?></th>
 			<th><?= $app->Locales->getKey('identifier'); ?></th>
-			<th></th>
+			<th class="center span25"></th>
 		</tr>
 	</thead>
 	<tbody>
