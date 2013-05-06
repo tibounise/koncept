@@ -30,7 +30,7 @@
 			<td><?= $package['author']; ?></td>
 			<td><?= \Kompakt\Helpers\Beautifier::Filesize($package['size']); ?></td>
 			<td class="span25">
-				<a href="source.php?action=delete&id=<?= $key; ?>" class="iconlink"><i class="icon-cloud-download"></i></a>
+				<a href="source.php?action=install&id=<?= $package['identifier']; ?>&token=<?= Kompakt\Handlers\User::getToken(); ?>" class="iconlink"><i class="icon-cloud-download"></i></a>
 			</td>
 		</tr>
 		<?php

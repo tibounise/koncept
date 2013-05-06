@@ -14,6 +14,11 @@ switch ($_GET['action']) {
 		require 'app/controllers/module/add.controller.php';
 		require 'app/views/module/add.view.php';
 		break;
+
+	case 'delete':
+		require 'app/controllers/module/delete.controller.php';
+		require 'app/views/module/delete.view.php';
+		break;
 	
 	default:
 		require 'app/controllers/noaction/noaction.controller.php';

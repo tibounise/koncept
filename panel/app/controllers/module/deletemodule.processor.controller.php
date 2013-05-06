@@ -1,11 +1,11 @@
 <?php
 
-$app->configureApp(LOG_PROTECTION | LOCALIZED | CONFIG | ERROR | SOURCER | USER);
+$app->configureApp(LOG_PROTECTION | LOCALIZED | CONFIG | ERROR | MODULATOR);
 
 $app->Config->pushJSON(file_get_contents('../config/admin.json'));
 $app->configureLocales('locales/'.$app->Config->getKey('language').'.json');
 
-if (empty($_GET['id']) === false)
+if (empty($_GET['id']) === true)
 {
 	$app->Error->registerMessage($app->Locales->getKey('missingFieldsOrEmpty'));
 }
@@ -15,19 +15,18 @@ elseif (!isset($_GET['token']) && !$app->User->checkToken($_GET['token']))
 }
 else
 {
-	$app->Sourcer->loadSourceIndex();
+	$app->Modulator->loadModuleIndex();
 
-	if (!$app->Sourcer->issetSourceByIndex($_GET['id']))
+	if (!$app->Modulator->issetModuleByID($_GET['id']))
 	{
-		$app->Error->registerMessage($app->Locales->getKey('sourceNotFound'));
+		$app->Error->registerMessage($app->Locales->getKey('moduleNotFound'));
 	}
 	else
 	{
 		try
 		{
-			$app->Sourcer->deleteSource($_GET['id']);
-			$app->Sourcer->saveSourceIndex();
-
+			$app->Modulator->removeModule($_GET['id']);
+			$app->Modulator->saveModuleIndex();
 		}
 		catch (Exception $e)
 		{

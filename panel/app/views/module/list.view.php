@@ -30,7 +30,7 @@
 			<td><?= $module['identifier']; ?></td>
 			<td><?= $module['version']; ?></td>
 			<td>
-				<a href="source.php?action=delete&id=<?= $key; ?>" class="iconlink"><i class="icon-trash"></i></a>
+				<a href="module.php?action=delete&id=<?= $module['identifier']; ?>" class="iconlink"><i class="icon-trash"></i></a>
 			</td>
 		</tr>
 		<?php

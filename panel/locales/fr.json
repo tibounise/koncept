@@ -122,5 +122,15 @@
 	"version":"Version",
 	"sourceNotFound":"La source n'a pas été trouvée",
 	"sourceDeleted":"Source supprimée",
-	"deleteSource":"Supprimer une source"
+	"deleteSource":"Supprimer une source",
+	"packageNotFound":"Paquet non trouvé",
+	"installPackage":"Installer un paquet",
+	"packageInstalled":"Paquet installé",
+	"getBackModuleList":"Revenir à la liste des modules",
+	"confirmationRemoveModule":"Voulez-vous supprimer ce module ?",
+	"moduleNotFound":"Module non trouvé",
+	"moduleName":"Nom du module",
+	"moduleVersion":"Version du module",
+	"removeModule":"Enlever un module",
+	"moduleRemoved":"Le module a été supprimé avec succès"
 }

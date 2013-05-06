@@ -84,6 +84,8 @@ class Modulator
 			$zipHandler->extractTo('tmp/','data.zip');
 			$zipHandler->close();
 
+			unlink($modulePath);
+
 			$zipHandler = new \ZipArchive;
 			if (!$zipHandler->open('tmp/data.zip'))
 			{
@@ -97,6 +99,8 @@ class Modulator
       		}
 
       		$zipHandler->close();
+
+      		unlink('tmp/data.zip');
 
 			// Registering the module into the database
 			$this->registerModule($moduleInfos['name'],$moduleInfos['files'],$moduleInfos['version'],$moduleInfos['identifier']);
@@ -132,12 +136,30 @@ class Modulator
 		return isset($this->modules['modList'][$modName]);
 	}
 
-	public function removeModule($modName)
+	public function issetModuleByID($identifier)
 	{
+		foreach ($this->modules['modList'] as $module)
+		{
+			if ($module['identifier'] == $identifier)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public function removeModule($identifier)
+	{
+		$modName = $this->getModuleName($identifier);
+
 		// Deleting the module's files
 		foreach ($this->modules['modList'][$modName]['files'] as $modFile)
 		{
-			unlink('../'.$modFile);
+			if (!unlink('../'.$modFile))
+			{
+				throw new \Exception('Error while deleting "../'.$modFile.'"');
+			}
 		}
 
 		// Removing the files of the file index
@@ -163,6 +185,32 @@ class Modulator
 			return false;
 		}
 		return $this->modules['modList'];
+	}
+
+	public function getModuleInfo($identifier)
+	{
+		foreach ($this->modules['modList'] as $module)
+		{
+			if ($module['identifier'] == $identifier)
+			{
+				return $module;
+			}
+		}
+
+		return false;
+	}
+
+	public function getModuleName($identifier)
+	{
+		foreach ($this->modules['modList'] as $key => $module)
+		{
+			if ($module['identifier'] == $identifier)
+			{
+				return $key;
+			}
+		}
+
+		return false;
 	}
 }
 

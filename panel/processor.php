@@ -75,6 +75,11 @@ switch ($_GET['action']) {
 		require 'app/views/module/addmodule.processor.view.php';
 		break;
 
+	case 'deletemodule':
+		require 'app/controllers/module/deletemodule.processor.controller.php';
+		require 'app/views/module/deletemodule.processor.view.php';
+		break;
+
 	default:
 		require 'app/controllers/noaction/noaction.controller.php';
 		require 'app/views/noaction/noaction.view.php';

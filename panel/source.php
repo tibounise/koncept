@@ -24,6 +24,11 @@ switch ($_GET['action']) {
 		require 'app/controllers/source/delete.controller.php';
 		require 'app/views/source/delete.view.php';
 		break;
+
+	case 'install':
+		require 'app/controllers/source/install.controller.php';
+		require 'app/views/source/install.view.php';
+		break;
 	
 	default:
 		require 'app/controllers/noaction/noaction.controller.php';

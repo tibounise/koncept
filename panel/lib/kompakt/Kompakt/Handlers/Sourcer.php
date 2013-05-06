@@ -125,6 +125,61 @@ class Sourcer
 	{
 		return isset($this->sources[$index]);
 	}
+
+	public function issetPackageByID($identifier)
+	{
+		$packages = $this->listPackages();
+
+		foreach ($packages as $package) {
+			if ($package['identifier'] == $identifier)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public function downloadPackage($identifier)
+	{
+		$packages = $this->listPackages();
+
+		foreach ($packages as $package) {
+			if ($package['identifier'] == $identifier)
+			{
+				// Downloading our package to tmp/package.kcpt with CURL
+				$fileHandler = fopen('tmp/package.kcpt','w'); 
+				$curlHandler = curl_init($package['url']);
+				
+				curl_setopt($curlHandler,CURLOPT_FILE,$fileHandler);
+				curl_setopt($curlHandler,CURLOPT_USERAGENT,'Koncept Sourcer Agent');
+
+				// Closing everything
+				curl_exec($curlHandler);
+
+				$httpCode = curl_getinfo($curlHandler, CURLINFO_HTTP_CODE);
+				if($httpCode == 404)
+				{
+					curl_close($curlHandler);
+					fclose($fileHandler);
+					unlink('tmp/package.kcpt');
+					throw new \Exception('404 Error');
+				}
+
+				curl_close($curlHandler);
+				fclose($fileHandler);
+
+				// Checking MD5
+				if (md5_file('tmp/package.kcpt') != $package['md5'])
+				{
+					throw new \Exception('MD5 fail');
+				}
+
+				return true;
+			}
+		}
+		return false;
+	}
 }
 
 ?>

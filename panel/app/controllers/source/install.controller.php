@@ -1,11 +1,11 @@
 <?php
 
-$app->configureApp(LOG_PROTECTION | LOCALIZED | CONFIG | ERROR | SOURCER | USER);
+$app->configureApp(LOG_PROTECTION | LOCALIZED | CONFIG | ERROR | SOURCER | USER | MODULATOR);
 
 $app->Config->pushJSON(file_get_contents('../config/admin.json'));
 $app->configureLocales('locales/'.$app->Config->getKey('language').'.json');
 
-if (empty($_GET['id']) === false)
+if (empty($_GET['id']) === true)
 {
 	$app->Error->registerMessage($app->Locales->getKey('missingFieldsOrEmpty'));
 }
@@ -17,17 +17,20 @@ else
 {
 	$app->Sourcer->loadSourceIndex();
 
-	if (!$app->Sourcer->issetSourceByIndex($_GET['id']))
+	if (!$app->Sourcer->issetPackageByID($_GET['id']))
 	{
-		$app->Error->registerMessage($app->Locales->getKey('sourceNotFound'));
+		$app->Error->registerMessage($app->Locales->getKey('packageNotFound'));
 	}
 	else
 	{
 		try
 		{
-			$app->Sourcer->deleteSource($_GET['id']);
-			$app->Sourcer->saveSourceIndex();
+			// Downloading the package
+			$app->Sourcer->downloadPackage($_GET['id']);
 
+			$app->Modulator->loadModuleIndex();
+			$app->Modulator->install('tmp/package.kcpt');
+			$app->Modulator->saveModuleIndex();
 		}
 		catch (Exception $e)
 		{
