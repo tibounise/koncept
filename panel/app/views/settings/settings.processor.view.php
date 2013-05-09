@@ -1,4 +1,5 @@
 <?php
+	$app->HtmlVars->setKey('title','settings');
 	require 'assets/php/header.view.php';
 
 	if ($app->Error->issetMessage()) {

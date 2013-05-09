@@ -132,5 +132,8 @@
 	"moduleName":"Nom du module",
 	"moduleVersion":"Version du module",
 	"removeModule":"Enlever un module",
-	"moduleRemoved":"Le module a été supprimé avec succès"
+	"moduleRemoved":"Le module a été supprimé avec succès",
+	"leaveEmpty":"laisser vide si vous ne voulez pas le remplacer",
+	"addManually":"Ajouter manuellement",
+	"addViaSource":"Ajouter via les sources"
 }

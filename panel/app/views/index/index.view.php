@@ -12,8 +12,10 @@
     <body>
         <div class="header-bar">
             <div class="logo">
-                <a href="index.php"><img src="assets/images/koncept-logo.svg" height="35" width="185" /></a>            </div>
+                <a href="index.php"><img src="assets/images/koncept-logo.svg" height="35" width="185" /></a>
+            </div>
             <div class="icon-bar">
+                <a href="source.php?action=pkglist" title="<?= $app->Locales->getKey('packageManager'); ?>" class="icon"><i class="icon-truck"></i></a>
                 <a href="settings.php" class="icon" title="<?= $app->Locales->getKey('settings'); ?>"><i class="icon-cogs"></i></a>
                 <a href="backup.php" class="icon" title="<?= $app->Locales->getKey('backup'); ?>"><i class="icon-umbrella"></i></a>
                 <a href="login.php?logout=true&token=<?= Kompakt\Handlers\User::getToken(); ?>" class="icon" title="<?= $app->Locales->getKey('logout'); ?>"><i class="icon-signout"></i></a>

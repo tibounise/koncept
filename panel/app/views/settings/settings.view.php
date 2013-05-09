@@ -1,4 +1,5 @@
 <?php
+	$app->HtmlVars->setKey('title','settings');
 	require 'assets/php/header.view.php';
 ?>
 
@@ -14,7 +15,7 @@
 		</div>
 	</div>
 	<div class="input-control">
-		<p class="input-label"><?= $app->Locales->getKey('password'); ?> <span class="text-tip">(laisser vide si vous ne voulez pas le remplacer)</span> :</p>
+		<p class="input-label"><?= $app->Locales->getKey('password'); ?> <span class="text-tip">(<?= $app->Locales->getKey('leaveEmpty'); ?>)</span> :</p>
 		<div class="input-field">
 			<input type="password" name="password" />
 		</div>

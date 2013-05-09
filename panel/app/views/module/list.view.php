@@ -6,8 +6,8 @@
 	{
 ?>
 <h1 class="pull-left"><?= $app->Locales->getKey('modulesList'); ?></h1>
-<a href="module.php?action=add"><button class="btn btn-mini pull-right">Ajouter un module manuellement</button></a>
-<a href="source.php?action=pkglist"><button class="btn btn-mini pull-right">Ajouter un module via une source</button></a>
+<a href="module.php?action=add"><button class="btn btn-mini pull-right"><?= $app->Locales->getKey('addManually'); ?></button></a>
+<a href="source.php?action=pkglist"><button class="btn btn-mini pull-right"><?= $app->Locales->getKey('addViaSource'); ?></button></a>
 
 <hr />
 
@@ -50,8 +50,8 @@
 <div class="center">
 	<p><?= $app->Locales->getKey('noModule'); ?>.</p>
 	<br />
-	<a href="module.php?action=add"><button class="btn">Ajouter un module manuellement</button></a>
-	<a href="source.php?action=pkglist"><button class="btn">Ajouter un module via une source</button></a>
+	<a href="module.php?action=add"><button class="btn"><?= $app->Locales->getKey('addManually'); ?></button></a>
+	<a href="source.php?action=pkglist"><button class="btn"><?= $app->Locales->getKey('addViaSource'); ?></button></a>
 </div>
 
 <?php
