@@ -50,7 +50,7 @@ class Mediatizer {
 	}
 
 	public function cleanFiles($files) {
-		$excluded = array('.htaccess','.DS_Store');
+		$excluded = array('.htaccess','.DS_Store','.empty');
 		return array_diff($files, $excluded);
 	}
 
