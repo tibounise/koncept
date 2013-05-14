@@ -1,4 +1,4 @@
-Options +FollowSymLinks -MultiViews
+Options +FollowSymLinks -MultiViews -Indexes
 
 RewriteEngine On
 
@@ -7,3 +7,11 @@ RewriteBase /~tibounise/koncept/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^.*$ index.php [L]
+
+RedirectMatch 403 app/.*$
+RedirectMatch 403 config/.*$
+RedirectMatch 403 data/.*$
+RedirectMatch 403 panel/locales/.*$
+RedirectMatch 403 panel/app/.*$
+RedirectMatch 403 panel/lib/.*$
+RedirectMatch 403 panel/assets/php/.*$
