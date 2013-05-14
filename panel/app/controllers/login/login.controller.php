@@ -1,9 +1,6 @@
 <?php
 
-$app->configureApp(USER_HANDLING | CONFIG | ERROR | LOCALIZED);
-
-$app->Config->pushJSON(file_get_contents('../config/admin.json'));
-$app->configureLocales('locales/'.$app->Config->getKey('language').'.json');
+$app->configureApp(USER_HANDLING | ERROR);
 
 // Verification of the login informations
 if (!empty($_GET['logout']) && $_GET['logout'] == 'true' && !empty($_GET['token']) && !empty($_SESSION['token']) && $_GET['token'] == $_SESSION['token']) {

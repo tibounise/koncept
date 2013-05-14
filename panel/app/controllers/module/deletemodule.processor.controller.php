@@ -1,9 +1,6 @@
 <?php
 
-$app->configureApp(LOG_PROTECTION | LOCALIZED | CONFIG | ERROR | MODULATOR);
-
-$app->Config->pushJSON(file_get_contents('../config/admin.json'));
-$app->configureLocales('locales/'.$app->Config->getKey('language').'.json');
+$app->configureApp(LOG_PROTECTION | ERROR | MODULATOR);
 
 if (empty($_GET['id']) === true)
 {

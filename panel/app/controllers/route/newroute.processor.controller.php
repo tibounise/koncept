@@ -1,9 +1,7 @@
 <?php
 
-$app->configureApp(USER_HANDLING | CONFIG | LOG_PROTECTION | LOCALIZED | ROUTER | ERROR);
+$app->configureApp(USER_HANDLING | LOG_PROTECTION | ROUTER | ERROR);
 
-$app->Config->pushJSON(file_get_contents('../config/admin.json'));
-$app->configureLocales('locales/'.$app->Config->getKey('language').'.json');
 $app->Router->loadRouting('../config/routes.json');
 
 $app->HtmlVars->setKey('title','router');

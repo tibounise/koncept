@@ -17,6 +17,9 @@ class Kompakt
 	public $Modulator;
 	public $Sourcer;
 
+	// Internal paths
+	const configPath = '../config/admin.json';
+
 	public function __construct()
 	{
 		session_start();
@@ -26,7 +29,14 @@ class Kompakt
 	public function configureApp($params)
 	{
 		$this->build($params);
+
+		// Initialising some classes
 		$this->HtmlVars = new \Kompakt\Handlers\Fukon;
+		$this->Config = new \Kompakt\Handlers\Fukon;
+		$this->Locales = new \Kompakt\Handlers\Fukon;
+
+		$this->Config->pushJSON(file_get_contents(self::configPath));
+		$this->Locales->pushJSON(file_get_contents('locales/'.$this->Config->getKey('language').'.json'));
 	}
 
 	public function build($params)
@@ -34,10 +44,6 @@ class Kompakt
 		if ($params & 1) // USER_HANDLING parameter
 		{
 			$this->User = new \Kompakt\Handlers\User;
-		}
-		if ($params & 2) // CONFIG parameter
-		{
-			$this->Config = new \Kompakt\Handlers\Fukon;
 		}
 		if ($params & 4) // FETCHER parameter
 		{
@@ -50,10 +56,6 @@ class Kompakt
 		if ($params & 16) // ERROR parameter
 		{
 			$this->Error =  new \Kompakt\Handlers\Error;
-		}
-		if ($params & 32) // LOCALIZED parameter
-		{
-			$this->Locales = new \Kompakt\Handlers\Fukon;
 		}
 		if ($params & 64) // MEDIATIZER parameter
 		{
@@ -71,12 +73,6 @@ class Kompakt
 		{
 			$this->Sourcer = new \Kompakt\Handlers\Sourcer;
 		}
-	}
-
-	public function configureLocales($localesPath)
-	{
-		$localesJSON = file_get_contents($localesPath);
-		$this->Locales->pushJSON($localesJSON);
 	}
 }
 

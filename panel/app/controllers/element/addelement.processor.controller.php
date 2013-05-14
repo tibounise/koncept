@@ -1,12 +1,10 @@
 <?php
 
-$app->configureApp(USER_HANDLING | CONFIG | LOG_PROTECTION | LOCALIZED | FETCHER | ERROR);
+$app->configureApp(USER_HANDLING | LOG_PROTECTION | FETCHER | ERROR);
 
 // Init app
 $app->Fetcher->openIndex('../data/index.json');
 $app->Fetcher->registerPath('../data/');
-$app->Config->pushJSON(file_get_contents('../config/admin.json'));
-$app->configureLocales('locales/'.$app->Config->getKey('language').'.json');
 
 // Generate a new ID
 $newid = $app->Fetcher->getNewId();

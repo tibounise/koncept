@@ -1,9 +1,7 @@
 <?php
 
-$app->configureApp(USER_HANDLING | CONFIG | LOG_PROTECTION | LOCALIZED | FETCHER);
+$app->configureApp(USER_HANDLING | LOG_PROTECTION | FETCHER);
 
-$app->Config->pushJSON(file_get_contents('../config/admin.json'));
-$app->configureLocales('locales/'.$app->Config->getKey('language').'.json');
 $app->Fetcher->openIndex('../data/index.json');
 $app->Fetcher->registerPath('../data/');
 
