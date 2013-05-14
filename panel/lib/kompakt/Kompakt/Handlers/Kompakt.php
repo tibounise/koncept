@@ -5,7 +5,8 @@ namespace Kompakt\Handlers;
 /**
  * @package Kompakt
  */
-class Kompakt {
+class Kompakt
+{
 	public $User;
 	public $Config;
 	public $Fetcher;
@@ -16,12 +17,20 @@ class Kompakt {
 	public $Modulator;
 	public $Sourcer;
 
-	public function __construct() {
+	public function __construct()
+	{
 		session_start();
 		session_regenerate_id();
 	}
 
-	public function configureApp($params) {
+	public function configureApp($params)
+	{
+		$this->build($params);
+		$this->HtmlVars = new \Kompakt\Handlers\Fukon;
+	}
+
+	public function build($params)
+	{
 		if ($params & 1) // USER_HANDLING parameter
 		{
 			$this->User = new \Kompakt\Handlers\User;
@@ -62,10 +71,10 @@ class Kompakt {
 		{
 			$this->Sourcer = new \Kompakt\Handlers\Sourcer;
 		}
-		$this->HtmlVars = new \Kompakt\Handlers\Fukon;
 	}
 
-	public function configureLocales($localesPath) {
+	public function configureLocales($localesPath)
+	{
 		$localesJSON = file_get_contents($localesPath);
 		$this->Locales->pushJSON($localesJSON);
 	}
