@@ -45,6 +45,10 @@ class Kompakt
 		{
 			$this->User = new \Kompakt\Handlers\User;
 		}
+		if ($params & 2) // FORME parameter
+		{
+			include 'lib/forme/Forme.php';
+		}
 		if ($params & 4) // FETCHER parameter
 		{
 			$this->Fetcher = new \Kompakt\Handlers\Fetcher;

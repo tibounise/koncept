@@ -2,6 +2,7 @@
 
 /*~-- Define the essentials constants of Kompakt --~*/
 define('USER_HANDLING',1);
+define('FORME',2);
 define('FETCHER',4);
 define('LOG_PROTECTION',8);
 define('ERROR',16);
@@ -17,7 +18,5 @@ spl_autoload_register(function($class) {
 
 // Define our application element
 $app = new \Kompakt\Handlers\Kompakt();
-
-// Configure the locales
 
 ?>
