@@ -4,18 +4,18 @@ namespace Kompakt\Handlers;
 
 class Router {
 	private $routingInfos;
-	private $path;
 
-	public function loadRouting($path) {
-		$routingFile = file_get_contents($path);
-		$this->path = $path;
+	const path = '../config/routes.json';
+
+	public function loadRouting() {
+		$routingFile = file_get_contents(self::path);
 
 		$routingJSON = json_decode($routingFile,true);
 		$this->routingInfos = $routingJSON;
 	}
 
 	public function saveRouting() {
-		file_put_contents($this->path,json_encode($this->routingInfos));
+		file_put_contents(self::path,json_encode($this->routingInfos));
 	}
 
 	public function registerNewRoute($regex,$controller,$variables) {

@@ -2,7 +2,7 @@
 
 $app->configureApp(USER_HANDLING | LOG_PROTECTION | ROUTER | ERROR);
 
-$app->Router->loadRouting('../config/routes.json');
+$app->Router->loadRouting();
 
 $app->HtmlVars->setKey('title','router');
 
