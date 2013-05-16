@@ -1,6 +1,6 @@
 <?php
 
-$app->configureApp(LOG_PROTECTION | FETCHER | ERROR);
+$app->configureApp(LOG_PROTECTION | FETCHER | ERROR | FORME);
 
 $app->Fetcher->openIndex('../data/index.json');
 $app->Fetcher->registerPath('../data/');

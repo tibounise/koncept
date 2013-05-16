@@ -15,7 +15,7 @@ class Forme {
 
 	public function build()
 	{
-		$html = '<form action="'.$this->action.'" class="'.$this->class.'" id="'.$this->id.'">';
+		$html = '<form action="'.$this->action.'" class="'.$this->class.'" id="'.$this->id.'" method="POST">';
 
 		foreach ($this->fields as $field) {
 			$html .= $field->render();

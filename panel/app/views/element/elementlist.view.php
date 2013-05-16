@@ -51,6 +51,8 @@
     </tbody>
 </table>
 
+<script src="assets/js/jquery/jquery.min.js"></script>
+
 <?php
     }
 

@@ -70,7 +70,6 @@
 <script type="text/javascript" src="assets/js/codemirror/xml.js"></script>
 <script type="text/javascript" src="assets/js/codemirror/css.js"></script>
 <script type="text/javascript" src="assets/js/codemirror/javascript.js"></script>
-<script type="text/javascript" src="assets/js/codemirror/vbscript.js"></script>
 <script type="text/javascript" src="assets/js/codemirror/htmlmixed.js"></script>
 <script type="text/javascript" src="assets/js/codemirror/bootleg.js"></script>
 
