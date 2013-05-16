@@ -4,21 +4,26 @@ namespace Forme;
 
 class Forme {
 	private $fields;
+	public $action = '';
+	public $class = '';
+	public $id = '';
 
 	public function add($field)
 	{
 		$this->fields[] = $field;
 	}
 
-	public function render($action = '',$method = 'POST',$class = '',$id = '')
+	public function build()
 	{
-		// BEGIN FORM HTML
+		$html = '<form action="'.$this->action.'" class="'.$this->class.'" id="'.$this->id.'">';
 
 		foreach ($this->fields as $field) {
 			$html .= $field->render();
 		}
 
-		// END FORM HTML
+		$html .= '</form>';
+
+		return $html;
 	}
 }
 

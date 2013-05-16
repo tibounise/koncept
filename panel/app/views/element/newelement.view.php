@@ -1,53 +1,70 @@
 <?php
+	$app->HtmlVars->setKey('title','element');
     require 'assets/php/header.view.php';
 ?>
 
 <h1><?= $app->Locales->getKey('newElement'); ?></h1>
 <hr />
 
-<form action="processor.php?action=addelement" class="standard-form" method="POST">
-	<div class="input-control">
-		<p class="input-label"><?= $app->Locales->getKey('elementName'); ?> :</p>
-		<div class="input-field">
-			<input type="text" name="elementName" />
-		</div>
-	</div>
-	<div class="input-control">
-		<p class="input-label"><?= $app->Locales->getKey('elementCreationDate'); ?> <span class="text-tip">(<?= $app->Locales->getKey('TIMESTAMPformat'); ?>)</span> :</p>
-		<div class="input-field">
-			<input type="text" name="elementPubdate" value="<?= $timestamp; ?>" />
-		</div>
-	</div>
-	<div class="input-control">
-		<p class="input-label"><?= $app->Locales->getKey('elementLastUpdateDate'); ?> <span class="text-tip">(<?= $app->Locales->getKey('TIMESTAMPformat'); ?>)</span> :</p>
-		<div class="input-field">
-			<input type="text" name="elementLastedit" value="<?= $timestamp; ?>" />
-		</div>
-	</div>
-	<div class="input-control">
-		<p class="input-label"><?= $app->Locales->getKey('abilities'); ?> :</p>
-		<div class="input-field">
-			<input type="text" name="elementAbilities" />
-		</div>
-	</div>
-	<div class="input-control">
-		<p class="input-label"><?= $app->Locales->getKey('metadata'); ?> <span class="text-tip">(<?= $app->Locales->getKey('JSONformat'); ?>)</span> :</p>
-		<div class="input-field">
-			<textarea rows="10" name="elementMetadata"><?= $metadataJSON; ?></textarea>
-		</div>
-	</div>
-	<div class="input-control">
-		<p class="input-label"><?= $app->Locales->getKey('elementContent'); ?> <span class="text-tip">(<?= $app->Locales->getKey('HTMLformat'); ?>)</span> :</p>
-		<div class="input-field">
-			<textarea rows="20" name="elementContent" id="content"></textarea>
-		</div>
-	</div>
-	<div class="input-control">
-		<div class="input-field">
-			<input type="submit" class="btn" value="<?= $app->Locales->getKey('addElement'); ?>" />	
-		</div>
-	</div>
-</form>
+<?php
+	$forme = new \Forme\Forme();
+	$forme->action = 'processor.php?action=addelement';
+	$forme->class = 'standard-form';
+
+	// Element name field
+	$field = new \Forme\Elements\TextInput();
+	$field->name = 'elementName';
+	$field->label = $app->Locales->getKey('elementName');
+	$forme->add($field);
+
+	// Element pubdate field
+	$field = new \Forme\Elements\TextInput();
+	$field->name = 'elementPubdate';
+	$field->label = $app->Locales->getKey('elementCreationDate');
+	$field->text_tip = $app->Locales->getKey('TIMESTAMPformat');
+	$field->value = $timestamp;
+	$forme->add($field);
+
+	// Element pubdate field
+	$field = new \Forme\Elements\TextInput();
+	$field->name = 'elementLastedit';
+	$field->label = $app->Locales->getKey('elementLastUpdateDate');
+	$field->text_tip = $app->Locales->getKey('TIMESTAMPformat');
+	$field->value = $timestamp;
+	$forme->add($field);
+
+	// Abilities field
+	$field = new \Forme\Elements\TextInput();
+	$field->name = 'elementAbilities';
+	$field->label = $app->Locales->getKey('abilities');
+	$forme->add($field);
+
+	// Metadata field
+	$field = new \Forme\Elements\Textarea();
+	$field->name = 'elementMetadata';
+	$field->label = $app->Locales->getKey('metadata');
+	$field->text_tip = $app->Locales->getKey('JSONformat');
+	$field->rows = 10;
+	$field->value = $metadataJSON;
+	$forme->add($field);
+
+	// Content field
+	$field = new \Forme\Elements\Textarea();
+	$field->name = 'elementContent';
+	$field->label = $app->Locales->getKey('elementContent');
+	$field->text_tip = $app->Locales->getKey('HTMLformat');
+	$field->id = 'content';
+	$field->rows = 20;
+	$forme->add($field);
+
+	// Submit button
+	$field = new \Forme\Elements\Submit();
+	$field->value = $app->Locales->getKey('addElement');
+	$field->class = 'btn';
+	$forme->add($field);
+
+	echo $forme->build();
+?>
 
 <script type="text/javascript" src="assets/js/codemirror/codemirror.js"></script>
 <script type="text/javascript" src="assets/js/codemirror/xml.js"></script>
