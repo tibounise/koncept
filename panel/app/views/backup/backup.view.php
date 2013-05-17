@@ -6,6 +6,33 @@
 
 <hr />
 
+<?php
+	$forme = new Forme\Forme();
+	$forme->action = 'processor.php?action=backup';
+	$forme->class = 'standard-form';
+
+	// Enable media backup field
+	$field = new Forme\Elements\Select();
+	$field->options = array('true' => $app->Locales->getKey('yes'),
+							'false' => $app->Locales->getKey('no'));
+	$field->name = 'mediaBackup';
+	$field->label = $app->Locales->getKey('enableMediaBackup');
+	$forme->add($field);
+
+	// Enable elements backup
+	$field = new Forme\Elements\Select();
+	$field->options = array('true' => $app->Locales->getKey('yes'),
+							'false' => $app->Locales->getKey('no'));
+	$field->name = 'elementBackup';
+	$field->label = $app->Locales->getKey('enableElementBackup');
+	$forme->add($field);
+
+	// Submit field
+	$field = new Forme\Elements\Submit();
+	$field->class = 'btn';
+	$field->value = $app->Locales->getKey('makeBackup');
+?>
+
 <form action="processor.php?action=backup" class="standard-form" method="POST">
 	<h2><?= $app->Locales->getKey('mediaBackup'); ?></h2>
 	<div class="input-control">

@@ -2,15 +2,11 @@
 
 namespace Forme\Elements;
 
-class Textarea {
+class Select {
 	public $name;
+	public $options;
 	public $label;
-	public $value;
-	public $class;
 	public $text_tip;
-	public $placeholder;
-	public $rows;
-	public $id;
 
 	public function render()
 	{
@@ -24,7 +20,11 @@ class Textarea {
 			$html .= '<p class="input-label">'.$this->label.' <span class="text-tip">('.$this->text_tip.')</span> :</p>';
 		}
 		$html .= '<div class="input-field">';
-		$html .= '<textarea name="'.$this->name.'" id="'.$this->id.'" class="'.$this->class.'" placeholder="'.$this->placeholder.'">'.$this->value.'</textarea>';
+		$html .= '<select name="'.$this->name.'">';
+		foreach ($options as $value => $option) {
+			$html .= '<option value="'.$value.'">'.$option.'</option>';
+		}
+		$html .= '</select>';
 		$html .= '</div>';
 		$html .= '</div>';
 

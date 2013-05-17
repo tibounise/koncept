@@ -15,7 +15,7 @@
 
 <?php
 	$forme = new Forme\Forme();
-	$forme->action = 'processor.php?action=editelement&id='.$_GET['id'].'&token='.Kompakt\Handlers\User::getToken();
+	$forme->action = 'processor.php?action=editelement';
 	$forme->class = 'standard-form';
 
 	// Element name field
@@ -65,6 +65,18 @@
 	$field->id = 'content';
 	$field->rows = 20;
 	$field->value = htmlspecialchars(stripslashes($app->Fetcher->content));
+	$forme->add($field);
+
+	// Adding element's ID
+	$field = new \Forme\Elements\Hidden();
+	$field->value = $_GET['id'];
+	$field->name = 'id';
+	$forme->add($field);
+
+	// Adding token
+	$field = new \Forme\Elements\Hidden();
+	$field->value = Kompakt\Handlers\User::getToken();
+	$field->name = 'token';
 	$forme->add($field);
 
 	// Submit button
