@@ -188,6 +188,12 @@ p.input-label {
 		.input-field input[type="submit"] {
 			margin: 0 !important;
 		}
+		.input-field select {
+			.btnMaker();
+			.btnPainter(@dark-gray);
+			width: 260px;
+			margin: 0;
+		}
 	}
 }
 
@@ -341,5 +347,13 @@ table.listElements {
 
 	.pull-left,.pull-right {
 		float:none;
+	}
+
+	.standard-form {
+		.input-control {
+			.input-field select {
+				width: 100%;
+			}
+		}
 	}
 }

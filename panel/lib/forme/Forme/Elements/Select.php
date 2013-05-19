@@ -21,7 +21,7 @@ class Select {
 		}
 		$html .= '<div class="input-field">';
 		$html .= '<select name="'.$this->name.'">';
-		foreach ($options as $value => $option) {
+		foreach ($this->options as $value => $option) {
 			$html .= '<option value="'.$value.'">'.$option.'</option>';
 		}
 		$html .= '</select>';

@@ -1,7 +1,5 @@
 <?php
 
-$app->configureApp(LOG_PROTECTION);
-
-$app->HtmlVars->setKey('title','backup');
+$app->configureApp(LOG_PROTECTION | FORME);
 
 ?>
